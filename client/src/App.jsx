@@ -1,6 +1,6 @@
 import React from "react";
 import Home from "./pages/Home";
-import ProductPage from "./pages/ProductPage";
+import CustomNavbar from "./components/CustomNavbar";
 import Shop from "./pages/Shop";
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 
@@ -8,12 +8,11 @@ const App = () => {
   return (
     <>
       <BrowserRouter>
+        <CustomNavbar />
         <Routes>
           <Route path="/" element={<Home />}></Route>
         </Routes>
-        <Routes>
-          <Route path="/productPage" element={<ProductPage />}></Route>
-        </Routes>
+
         <Routes>
           <Route path="/shop" element={<Shop />}></Route>
         </Routes>
