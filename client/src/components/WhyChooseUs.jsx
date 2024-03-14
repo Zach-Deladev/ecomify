@@ -2,7 +2,7 @@ import React from 'react'
 
 const WhyChooseUse = () => {
   return (
-    <div>WhyChooseUse</div>
+    <h1>WhyChooseUse</h1>
   )
 }
 

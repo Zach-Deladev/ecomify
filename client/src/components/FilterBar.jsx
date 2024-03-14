@@ -2,7 +2,7 @@ import React from 'react'
 
 const FilterBar = () => {
   return (
-    <div>FilterBar</div>
+    <h1>FilterBar</h1>
   )
 }
 
