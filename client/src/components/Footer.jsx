@@ -1,42 +1,93 @@
 import React from "react";
-import { Container, Row, Col } from "react-bootstrap";
+import { Container, Row, Col, Button, Dropdown } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
 
-const Footer = () => {
+function Footer() {
   return (
-    <footer className="bg-dark text-light py-4 mt-5">
+    <div className="footer pb-4">
       <Container>
         <Row>
-          <Col className="text-center text-md-left">
-            <h5>About Us</h5>
-            <p>
-              We're passionate about offering the best quality t-shirts,
-              featuring unique designs and unmatched comfort.
-            </p>
+          <Col lg={3} sm={12}>
+            <h1>Subscribe for Updates</h1>
+            <div className="input-group mb-3">
+              <input
+                type="text"
+                className="form-control"
+                placeholder="Enter your email"
+                aria-label="Enter your email"
+                aria-describedby="button-addon2"
+              />
+              <Button variant="secondary" id="button-addon2">
+                Subscribe
+              </Button>
+            </div>
           </Col>
-          <Col className="text-center text-md-left">
-            <h5>Contact Us</h5>
-            <p>Email: support@example.com</p>
-            <p>Phone: (123) 456-7890</p>
+          <Col lg={5} sm={12}></Col>
+          <Col lg={2} sm={6} xs={6}>
+            <ul>
+              <li>
+                <a href="#">Shop</a>
+              </li>
+              <li>
+                <a href="#">Return your order</a>
+              </li>
+              <li>
+                <a href="#">Terms of service</a>
+              </li>
+              <li>
+                <a href="#">Help</a>
+              </li>
+            </ul>
           </Col>
-          <Col className="text-center text-md-left">
-            <h5>Follow Us</h5>
-            <p>
-              Stay updated with our latest collections and exclusive offers on
-              social media.
-              <br />
-              [Social Media Links Here]
-            </p>
-          </Col>
-        </Row>
-        <Row>
-          <Col className="text-center mt-3">
-            © 2024 Your Company Name. All Rights Reserved.
+          <Col lg={2} sm={6} xs={6}>
+            <ul>
+              <li>
+                <a href="#">Contact</a>
+              </li>
+              <li>
+                <a href="#">Privacy policy</a>
+              </li>
+              <li>
+                <a href="#">Refund policy</a>
+              </li>
+              <li>
+                <a href="#">Account</a>
+              </li>
+            </ul>
           </Col>
         </Row>
       </Container>
-    </footer>
+      <div className="copyright border-top pt-4">
+        <Container>
+          <Row>
+            <Col lg={6} sm={6} xs={12} className="social-icons">
+              <a href="#">
+                <i className="fab fa-facebook fa-lg"></i>
+              </a>
+              <a href="#">
+                <i className="fab fa-instagram fa-lg"></i>
+              </a>
+            </Col>
+            <Col lg={6} sm={6} xs={12} className="all-rights">
+              © 2024, Ecomify (UK) All Rights Reserved.
+            </Col>
+            <Col lg={12} sm={12} xs={12} className="text-center pt-3">
+              <Dropdown>
+                <Dropdown.Toggle variant="info">
+                  United Kingdom (GBP £)
+                </Dropdown.Toggle>
+                <Dropdown.Menu>
+                  <Dropdown.Item href="#">
+                    United Kingdom (GBP £)
+                  </Dropdown.Item>
+                </Dropdown.Menu>
+              </Dropdown>
+            </Col>
+          </Row>
+        </Container>
+      </div>
+    </div>
   );
-};
+}
 
 export default Footer;
