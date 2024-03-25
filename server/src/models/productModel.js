@@ -14,8 +14,14 @@ const productSchema = mongoose.Schema({
     required: true,
   },
   sizes: {
-    type: String,
+    type: [String], // Changed to array of strings to represent available sizes
     required: true,
+  },
+  stockQuantities: {
+    L: { type: Number, required: true, default: 0 },
+    XL: { type: Number, required: true, default: 0 },
+    XXL: { type: Number, required: true, default: 0 },
+    XXXL: { type: Number, required: true, default: 0 },
   },
 });
 
