@@ -1,0 +1,40 @@
+.testimonials{
+    background-color: #333;
+    color:#fff;
+    padding:2.5em 10em;
+    font-family: "Poppins", sans-serif;
+}
+
+.testimonials p{
+    margin:0;
+}
+
+.testimonials .material-symbols-outlined {
+    display: inline!important;
+    vertical-align: middle!important;
+    font-size: 25px!important;
+    color:#4191F5;
+    letter-spacing: -4px!important;
+}
+
+.testimonials-text{
+    text-align: center;;
+    padding:0.5em 0;
+}
+
+.testimonial-body{
+    padding:0.5em 0;
+    font-weight:bold;
+    font-size:1.5em;
+    line-height:25px;
+}
+
+.testimonials li{
+    font-weight:200;
+    padding-bottom:1em;
+}
+
+.testimonials a{
+    font-weight:bold;
+    text-decoration:underline!important;
+}
