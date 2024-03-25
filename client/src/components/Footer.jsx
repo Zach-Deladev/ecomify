@@ -1,7 +1,7 @@
 import React from "react";
 import { Container, Row, Col, Button, Dropdown } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
-import "footer.css";
+import "./footer.css";
 
 function Footer() {
   return (
