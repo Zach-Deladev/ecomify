@@ -3,6 +3,11 @@ import { useEffect } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./ticker.css";
 
+import 'https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,1,0';
+import 'https://unpkg.com/css.gg/icons/all.css';
+import 'https://cdn.jsdelivr.net/npm/css.gg/icons/all.css';
+import 'https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;1,200;1,300;1,400&display=swap';
+
 function Ticker() {
   useEffect(() => {
   }, []);
