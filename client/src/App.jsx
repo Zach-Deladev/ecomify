@@ -11,9 +11,7 @@ const App = () => {
         <CustomNavbar />
         <Routes>
           <Route path="/" element={<Home />}></Route>
-        </Routes>
 
-        <Routes>
           <Route path="/shop" element={<Shop />}></Route>
         </Routes>
       </BrowserRouter>
