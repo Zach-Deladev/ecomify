@@ -1,27 +1,22 @@
 import React from "react";
-import { Container, Row, Col } from "react-bootstrap";
+import { Button } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
-import "./Hero.css"; // Assuming you'll create a custom CSS file for additional styling
+import "./hero.css";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faArrowForward } from '@fortawesome/free-solid-svg-icons';
 
-const Hero = () => {
+function Hero() {
   return (
-    <div className="hero-section">
-      <Container>
-        <Row className="align-items-center">
-          <Col xs={12} md={6}>
-            <h1>Welcome to Our Website</h1>
-            <p>
-              This is a hero section where you can highlight your key messages
-              or features.
-            </p>
-          </Col>
-          <Col xs={12} md={6}>
-            {/* Optional: Insert an image or any additional content here */}
-          </Col>
-        </Row>
-      </Container>
+    <div className="hero">	
+      <div className="hero-overlay">
+        <div className="hero-text">
+          <p>UP TO 40% OFF SITEWIDE.</p>
+          <h2>Premium T-Shirts For Big Men</h2>
+          <Button variant="primary">Shop Now <FontAwesomeIcon icon={faArrowForward} /></Button>
+        </div>
+      </div>
     </div>
   );
-};
+}
 
 export default Hero;

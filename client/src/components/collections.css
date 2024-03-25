@@ -1,0 +1,33 @@
+.collections{
+    padding:1em 1em;
+    font-family: "Poppins", sans-serif;
+}
+
+.collections-box-links{
+    background:#000;
+    text-align: center;
+    font-weight:bold;
+    font-size:20px;
+}
+
+.collections a{
+    color:#fff!important;
+    text-decoration: none!important;;
+}
+
+.collections a .collections-box-links{
+    background:#000;
+    transition: 0.3s ease;
+}
+
+.collections a:hover .collections-box-links{
+    background:rgb(36, 36, 36)!important;
+    transition: 0.3s ease;
+}
+
+@media (max-width: 530.98px) { 
+    .collections{
+        display:none!Important;
+    }
+ }
+

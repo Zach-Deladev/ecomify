@@ -1,0 +1,100 @@
+.best-sellers{
+    padding:1em 1em;
+    font-family: "Poppins", sans-serif;
+}
+
+.best-sellers-box{
+    padding-bottom:1em;
+}
+
+.best-sellers p{
+    margin:0;
+}
+
+.best-sellers-box .material-symbols-outlined {
+    display: inline!important;
+    vertical-align: middle!important;
+    font-size: 15px!important;
+    color:#FFCC00;
+    letter-spacing: -4px!important;
+}
+
+.btn-primary .material-symbols-outlined {
+    display: inline!important;
+    vertical-align: middle!important;
+    font-size: 15px!important;
+    color:#fff;
+    letter-spacing: -4px!important;
+}
+
+.reviews span{
+    font-weight:600;
+    font-size:12px;
+}
+
+.best-sellers h1{
+    font-weight:bold;
+}
+
+.best-sellers h3{
+    font-weight:bold;
+    font-size:2.4vw;
+    margin:0;
+}
+
+.best-sellers img{
+    display:absolute;
+}
+
+.discount-badge-box p{
+    background:#4191F5;
+    text-align: center;
+    color:#fff;
+    padding:0 0.5em;
+    margin:0 0 0.5em 0;
+}
+
+.reviews p{
+    margin:0;
+}
+
+.best-sellers-box-price p{
+    margin:0;
+}
+
+.price{
+    font-weight:bold;
+}
+
+.compare-at-price{
+    text-decoration: line-through;
+}
+
+.sale-price{
+    color:#4A7630;
+}
+
+.best-sellers-box-item-price small{
+    color:#D83B19;
+    font-size:12px;
+}
+
+.best-sellers-box-item-price{
+    margin-top:-0.5em;
+}
+
+.btn-primary{
+    background:#000!important;
+    border-radius:0px!important;
+    border:1px solid #000!important;
+}
+
+
+@media (max-width: 767.98px) { 
+    .best-sellers h3{
+        font-weight:bold;
+        font-size:5vw;
+        margin:0;
+    }
+ }
+

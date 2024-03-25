@@ -1,14 +1,51 @@
-.hero-section {
-  background-color: #007bff; /* Example background color */
-  color: white;
-  padding: 60px 0;
+*{
+  font-family: "Poppins", sans-serif;
 }
 
-.hero-section h1 {
-  margin-bottom: 20px;
-  font-size: 2.5rem;
+.hero{
+  background-image: url(hero-bg.png);
+  height:100%;
+  background-size:100%;
+  color:#fff;
 }
 
-.hero-section p {
-  font-size: 1.2rem;
+.hero .material-symbols-outlined {
+  display: inline!important;
+  vertical-align: middle!important;
+  font-size: 25px!important;
+}
+
+.btn-primary{
+  background:#000!important;
+  border-radius:0px!important;
+  border:1px solid #000!important;
+}
+
+.hero h2{
+  font-size:2.5em;
+}
+
+.hero p{
+  margin:0;
+}
+
+.hero-text{
+  width:50%;
+}
+
+.hero-overlay{
+background-color: rgba(0,0,0,0.5);
+padding:10%;
+}
+
+@media (max-width: 991.98px) { 
+  .hero-text{
+      width:60%;
+  }
+}
+
+@media (max-width: 791.98px) { 
+  .hero-text{
+      width:80%;
+  }
 }
