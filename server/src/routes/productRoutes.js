@@ -1,4 +1,6 @@
 import express from "express";
+import { protect } from "../middleware/authMiddleware.js";
+import restrictTo from "../middleware/restrictTo.js";
 import {
   createProduct,
   getAllProducts,
@@ -9,10 +11,10 @@ import {
 
 const router = express.Router();
 
-router.post("/", createProduct);
+router.post("/", protect, restrictTo("admin"), createProduct);
 router.get("/", getAllProducts);
 router.get("/:id", getProductById);
-router.put("/:id", updateProduct);
-router.delete("/:id", deleteProduct);
+router.put("/:id", protect, restrictTo("admin"), updateProduct);
+router.delete("/:id", protect, restrictTo("admin"), deleteProduct);
 
 export default router;

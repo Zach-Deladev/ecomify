@@ -8,7 +8,7 @@ import { notFound, errorHandler } from "./middleware/errorMiddleware.js";
 import userRoutes from "./routes/userRoutes.js";
 import productRoutes from "./routes/productRoutes.js";
 dotenv.config();
-const port = process.env.PORT || 5000;
+const port = process.env.PORT || 3001;
 
 connectDB();
 
@@ -16,7 +16,7 @@ const app = express();
 
 app.use(
   cors({
-    origin: "https://cosmic-otter-3de91d.netlify.app",
+    origin: "http://localhost:5173",
     credentials: true,
     methods: ["GET", "HEAD", "PUT", "PATCH", "POST", "DELETE", "OPTIONS"],
     allowedHeaders: "Content-Type,Authorization",

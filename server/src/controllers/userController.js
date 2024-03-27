@@ -5,13 +5,13 @@ import generateToken from "../utils/generateToken.js";
 // @route   POST /api/users/auth
 // @access  Public
 const authUser = async (req, res) => {
-  const { email, password } = req.body;
+  const { email, password } = req.body; // Removed name and role as they're not used here
 
   const user = await User.findOne({ email });
 
   if (user && (await user.matchPassword(password))) {
-    // Generate the token
-    const token = generateToken(user._id);
+    // Generate the token with user's role
+    const token = generateToken(user._id, user.role);
 
     // Set the token as an HTTP-only cookie
     res.cookie("jwt", token, {
@@ -24,13 +24,11 @@ const authUser = async (req, res) => {
       _id: user._id,
       name: user.name,
       email: user.email,
-      
+      role: user.role, // Include role in the response for clarity
       token: token,
     });
   } else {
-    res.status(401).json({
-      error: "Invalid email or password",
-    });
+    res.status(401).json({ error: "Invalid email or password" });
   }
 };
 
@@ -38,7 +36,7 @@ const authUser = async (req, res) => {
 // @route   POST /api/users
 // @access  Public
 const registerUser = async (req, res) => {
-  const { name, email, password } = req.body;
+  const { name, email, password, role } = req.body; // Ensure role is captured from the request body
 
   const userExists = await User.findOne({ email });
 
@@ -51,15 +49,18 @@ const registerUser = async (req, res) => {
     name,
     email,
     password,
+    role: role ? role : "customer", // Default to "customer" if no role is provided
   });
 
   if (user) {
-    generateToken(res, user._id);
+    const token = generateToken(user._id, user.role); // Generate token with role
 
     res.status(201).json({
       _id: user._id,
       name: user.name,
       email: user.email,
+      role: user.role, // Include role in the response
+      token: token,
     });
   } else {
     res.status(400);
@@ -83,12 +84,13 @@ const logoutUser = (req, res) => {
 // @access  Private
 const getUserProfile = async (req, res) => {
   const user = await User.findById(req.user._id);
-
+  console.log(req.user);
   if (user) {
     res.json({
       _id: user._id,
       name: user.name,
       email: user.email,
+      role: user.role, // Include the role here
     });
   } else {
     res.status(404).json({ message: "User not found" });
