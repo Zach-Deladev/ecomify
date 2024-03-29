@@ -14,6 +14,7 @@ export const DataProvider = ({ children }) => {
   const [user, setUser] = useState(null);
   const [isAuthenticated, setIsAuthenticated] = useState(false);
   const [products, setProducts] = useState([]);
+  const [isInitialising, setIsInitialising] = useState(true)
 
   // Authenticate user
   const authUser = async (credentials) => {
@@ -58,6 +59,8 @@ export const DataProvider = ({ children }) => {
 
   // Function to fetch user data
   const fetchUserData = async () => {
+    try {
+
     const jwt = Cookies.get("jwt");
     if (jwt) {
       console.log("Request Headers:", {
@@ -79,6 +82,11 @@ export const DataProvider = ({ children }) => {
         setUser(null);
         setIsAuthenticated(false);
       }
+    }
+  } catch (error) {
+
+    } finally {
+      setIsInitialising(false)
     }
   };
 
@@ -159,6 +167,7 @@ export const DataProvider = ({ children }) => {
   return (
     <DataContext.Provider
       value={{
+        isInitialising,
         user,
         isAuthenticated,
         products,

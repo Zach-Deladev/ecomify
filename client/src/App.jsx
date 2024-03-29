@@ -8,7 +8,13 @@ import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import { useData } from "./context/DataContext";
 import Login from "./pages/Login";
 const App = () => {
-  const { isAuthenticated, authUser, logoutUser } = useData();
+  const { isAuthenticated, isInitialising, user } = useData();
+  console.log(isInitialising)
+
+  if (isInitialising) {
+    return <p>Loading...</p>
+  }
+
   const handleLogout = () => {
     logoutUser();
   };
