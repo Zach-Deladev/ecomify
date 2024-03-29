@@ -7,8 +7,7 @@ import { useData } from "../context/DataContext";
 const CustomNavbar = () => {
   const [showModal, setShowModal] = useState(false);
   const [modalType, setModalType] = useState("login"); // 'login' or 'signup'
-  const [isAuthenticated, setIsAuthenticated] = useState(false); // Initialize isAuthenticated state
-  const { userData, authUser, registerUser, logoutUser } = useData();
+  const { isInitialising, user, signIn, signUp, logout } = useData();
 
   const handleClose = () => setShowModal(false);
   const handleShow = (type) => {
@@ -23,10 +22,9 @@ const CustomNavbar = () => {
     const password = formData.get("password");
 
     try {
-      await authUser({ email, password });
+      await signIn({ email, password });
       console.log("Login successful");
       setShowModal(false);
-      setIsAuthenticated(true); // Set isAuthenticated to true after successful login
     } catch (error) {
       console.error("Login error:", error);
       console.log("Login failed");
@@ -41,7 +39,7 @@ const CustomNavbar = () => {
     const password = formData.get("password");
 
     try {
-      await registerUser({ name, email, password });
+      await signUp({ name, email, password });
       setShowModal(false);
     } catch (error) {
       console.error("Signup error:", error);
@@ -50,9 +48,8 @@ const CustomNavbar = () => {
 
   const handleLogout = async () => {
     try {
-      await logoutUser();
+      await logout();
       console.log("Logout successful");
-      setIsAuthenticated(false); // Set isAuthenticated to false after logout
     } catch (error) {
       console.error("Logout error:", error);
     }
@@ -107,21 +104,21 @@ const CustomNavbar = () => {
     </Form>
   );
 
-  useEffect(() => {
-    // Refresh navbar when userData changes
-    if (userData) {
-      setIsAuthenticated(true);
-    }
-  }, [userData]);
+  // useEffect(() => {
+  //   // Refresh navbar when userData changes
+  //   if (userData) {
+  //     setIsAuthenticated(true);
+  //   }
+  // }, [userData]);
 
-  // Log isAuthenticated, userData, and userData.role for debugging
-  useEffect(() => {
-    console.log("isAuthenticated:", isAuthenticated);
-    console.log("userData:", userData);
-    if (userData) {
-      console.log("userData.role:", userData.role);
-    }
-  }, [isAuthenticated, userData]);
+  // // Log isAuthenticated, userData, and userData.role for debugging
+  // useEffect(() => {
+  //   console.log("isAuthenticated:", isAuthenticated);
+  //   console.log("userData:", userData);
+  //   if (userData) {
+  //     console.log("userData.role:", userData.role);
+  //   }
+  // }, [isAuthenticated, userData]);
 
   return (
     <>
@@ -139,7 +136,7 @@ const CustomNavbar = () => {
               <Nav.Link as={Link} to="/shop">
                 Shop
               </Nav.Link>
-              {!isAuthenticated && (
+              {!user && (
                 <>
                   <Nav.Link onClick={() => handleShow("login")}>Login</Nav.Link>
                   <Nav.Link onClick={() => handleShow("signup")}>
@@ -147,19 +144,19 @@ const CustomNavbar = () => {
                   </Nav.Link>
                 </>
               )}
-              {isAuthenticated && userData && userData.role === "customer" && (
+              {user && user.role === "customer" && (
                 <Nav.Link as={Link} to="/my-account">
                   My Account
                 </Nav.Link>
               )}
 
-              {isAuthenticated && userData?.role === "admin" && (
+              {user && user?.role === "admin" && (
                 <Nav.Link as={Link} to="/admin/dashboard">
                   Dashboard
                 </Nav.Link>
               )}
             </Nav>
-            {isAuthenticated && (
+            {user && (
               <Button variant="danger" onClick={handleLogout}>
                 Logout
               </Button>

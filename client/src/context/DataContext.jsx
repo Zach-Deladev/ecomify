@@ -12,12 +12,11 @@ export function useData() {
 // DataProvider component
 export const DataProvider = ({ children }) => {
   const [user, setUser] = useState(null);
-  const [isAuthenticated, setIsAuthenticated] = useState(false);
   const [products, setProducts] = useState([]);
-  const [isInitialising, setIsInitialising] = useState(true)
+  const [isInitialising, setIsInitialising] = useState(true);
 
-  // Authenticate user
-  const authUser = async (credentials) => {
+  // Sign in the user
+  const signIn = async (credentials) => {
     const response = await fetch("http://localhost:3001/api/users/auth/", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
@@ -28,65 +27,67 @@ export const DataProvider = ({ children }) => {
       const data = await response.json();
       Cookies.set("jwt", data.token, { expires: 7 });
       setUser(data);
-      setIsAuthenticated(true);
     } else {
       console.error("Authentication error");
-      setIsAuthenticated(false);
+      setUser(null)
     }
   };
 
   // Logout user
-  const logoutUser = () => {
+  const logout = () => {
     Cookies.remove("jwt");
     setUser(null);
-    setIsAuthenticated(false);
   };
 
-  // Register a new user
-  const registerUser = async (userData) => {
+  // Sign up a new user
+  const signUp = async (credentials) => {
     const response = await fetch("http://localhost:3001/api/users", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(userData),
+      body: JSON.stringify(credentials),
     });
 
     if (response.ok) {
-      await authUser({ email: userData.email, password: userData.password });
+      const data = await response.json();
+      Cookies.set("jwt", data.token, { expires: 7 });
+      setUser(data);
     } else {
-      console.error("Registration error");
+      console.error("Authentication error");
+      setUser(null);
     }
   };
 
-  // Function to fetch user data
-  const fetchUserData = async () => {
+  // Function to fetch user
+  const fetchUser = async () => {
     try {
-
-    const jwt = Cookies.get("jwt");
-    if (jwt) {
-      console.log("Request Headers:", {
-        Authorization: `Bearer ${jwt}`,
-      });
-      const response = await fetch("http://localhost:3001/api/users/profile", {
-        headers: {
+      const jwt = Cookies.get("jwt");
+      if (jwt) {
+        console.log("Request Headers:", {
           Authorization: `Bearer ${jwt}`,
-        },
-        credentials: "include",
-      });
+        });
+        const response = await fetch(
+          "http://localhost:3001/api/users/profile",
+          {
+            headers: {
+              Authorization: `Bearer ${jwt}`,
+            },
+            credentials: "include",
+          }
+        );
 
-      if (response.ok) {
-        const data = await response.json();
-        setUser(data);
-        setIsAuthenticated(true);
-      } else {
-        console.error("Error fetching user data");
-        setUser(null);
-        setIsAuthenticated(false);
+        if (response.ok) {
+          const data = await response.json();
+          setUser(data);
+        } else {
+          console.error("Error fetching user data");
+          setUser(null);
+        }
       }
-    }
-  } catch (error) {
-
+    } catch (error) {
+      console.error(error)
+      setUser(null)
     } finally {
-      setIsInitialising(false)
+      setIsInitialising(false);
     }
   };
 
@@ -160,7 +161,7 @@ export const DataProvider = ({ children }) => {
   };
 
   useEffect(() => {
-    fetchUserData();
+    fetchUser();
     fetchProducts();
   }, []);
 
@@ -169,11 +170,10 @@ export const DataProvider = ({ children }) => {
       value={{
         isInitialising,
         user,
-        isAuthenticated,
         products,
-        authUser,
-        logoutUser,
-        registerUser,
+        signIn,
+        signUp,
+        logout,
         fetchProducts,
         createProduct,
         updateProduct,
