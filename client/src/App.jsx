@@ -7,6 +7,8 @@ import Dashboard from "./pages/AdminDashboard"; // Your Dashboard page component
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import { useData } from "./context/DataContext";
 import Login from "./pages/Login";
+import ProductPage from "./pages/ProductPage";
+import PaymentSuccess from "./pages/PaymentSuccess";
 const App = () => {
   const { isAuthenticated, authUser, logoutUser } = useData();
   const handleLogout = () => {
@@ -36,6 +38,8 @@ const App = () => {
           />
 
           <Route path="/shop" element={<Shop />} />
+          <Route path="/product/:productId" element={<ProductPage />} />
+          <Route path="/payment-success" element={<PaymentSuccess />} />
 
           {/* Protect the Account route */}
           <Route
