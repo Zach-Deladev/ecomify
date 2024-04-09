@@ -5,16 +5,10 @@ import Shop from "./pages/Shop";
 import Account from "./pages/CustomerDashboard"; // Your Account page component
 import Dashboard from "./pages/AdminDashboard"; // Your Dashboard page component
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
-import { useData } from "./context/DataContext";
+import { useAuth } from "./context/AuthContext";
 
 const App = () => {
-  const { isInitialising, user } = useData();
-  console.log(isInitialising)
-
-
-  const handleLogout = () => {
-    logoutUser();
-  };
+  const { user } = useAuth();
 
   // Define a ProtectedRoute component for routes that require authentication
   const ProtectedRoute = ({ children }) => {
@@ -27,14 +21,6 @@ const App = () => {
         <CustomNavbar />
         <Routes>
           <Route path="/" element={<Home />} />
-
-          {/* <Route
-            path="/login"
-            element={
-              <Login onLoginSuccess={(credentials) => authUser(credentials)} />
-            }
-          /> */}
-
           <Route path="/shop" element={<Shop />} />
 
           {/* Protect the Account route */}

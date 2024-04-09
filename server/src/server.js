@@ -25,24 +25,14 @@ app.use(
 
 app.use(cookieParser());
 app.use(express.json());
-app.use(express.urlencoded({ extended: true }));
-
-app.options("*", cors());
 
 app.use("/api/users", userRoutes);
 app.use("/api/products", productRoutes);
 
-if (process.env.NODE_ENV === "production") {
-  const __dirname = path.resolve();
-  app.use(express.static(path.join(__dirname, "/frontend/dist")));
-  app.get("*", (req, res) =>
-    res.sendFile(path.resolve(__dirname, "frontend", "dist", "index.html"))
-  );
-} else {
-  app.get("/", (req, res) => {
-    res.send("API is running....");
-  });
-}
+app.get("/", (_, res) => {
+  res.send("API is running....");
+});
+
 app.use(notFound);
 app.use(errorHandler);
 

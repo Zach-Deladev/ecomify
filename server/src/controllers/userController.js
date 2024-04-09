@@ -2,9 +2,10 @@ import User from "../models/userModel.js";
 import generateToken from "../utils/generateToken.js";
 
 // @desc    Auth user & get token
-// @route   POST /api/users/auth
+// @route   POST /api/users/sign-in
 // @access  Public
-const authUser = async (req, res) => {
+
+const signIn = async (req, res) => {
   const { email, password } = req.body; // Removed name and role as they're not used here
 
   const user = await User.findOne({ email });
@@ -33,9 +34,10 @@ const authUser = async (req, res) => {
 };
 
 // @desc    Register a new user
-// @route   POST /api/users
+// @route   POST /api/users/sign-up
 // @access  Public
-const registerUser = async (req, res) => {
+
+const signUp = async (req, res) => {
   const { name, email, password, role } = req.body; // Ensure role is captured from the request body
 
   const userExists = await User.findOne({ email });
@@ -68,21 +70,10 @@ const registerUser = async (req, res) => {
   }
 };
 
-// @desc    Logout user / clear cookie
-// @route   POST /api/users/logout
-// @access  Public
-const logoutUser = (req, res) => {
-  res.cookie("jwt", "", {
-    httpOnly: true,
-    expires: new Date(0),
-  });
-  res.status(200).json({ message: "Logged out successfully" });
-};
-
 // @desc    Get user profile
 // @route   GET /api/users/profile
 // @access  Private
-const getUserProfile = async (req, res) => {
+const getProfile = async (req, res) => {
   const user = await User.findById(req.user._id);
   console.log(req.user);
   if (user) {
@@ -100,7 +91,7 @@ const getUserProfile = async (req, res) => {
 // @desc    Update user profile
 // @route   PUT /api/users/profile
 // @access  Private
-const updateUserProfile = async (req, res) => {
+const updateProfile = async (req, res) => {
   const user = await User.findById(req.user._id);
 
   if (user) {
@@ -124,9 +115,8 @@ const updateUserProfile = async (req, res) => {
   }
 };
 export {
-  authUser,
-  registerUser,
-  logoutUser,
-  getUserProfile,
-  updateUserProfile,
+  signIn,
+  signUp,
+  getProfile,
+  updateProfile,
 };

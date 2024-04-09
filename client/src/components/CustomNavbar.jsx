@@ -1,13 +1,16 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, } from "react";
 import { Link } from "react-router-dom";
 import { Navbar, Nav, Container, Modal, Button, Form } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
-import { useData } from "../context/DataContext";
+import { useAuth } from "../context/AuthContext";
 
 const CustomNavbar = () => {
   const [showModal, setShowModal] = useState(false);
   const [modalType, setModalType] = useState("login"); // 'login' or 'signup'
-  const { isInitialising, user, signIn, signUp, logout } = useData();
+  // Because we are using a context, this component will
+  // automatically refresh whenever any of those variables
+  // change.
+  const { isInitialising, user, signIn, signUp, logout } = useAuth();
 
   const handleClose = () => setShowModal(false);
   const handleShow = (type) => {
@@ -103,22 +106,6 @@ const CustomNavbar = () => {
       </Button>
     </Form>
   );
-
-  // useEffect(() => {
-  //   // Refresh navbar when userData changes
-  //   if (userData) {
-  //     setIsAuthenticated(true);
-  //   }
-  // }, [userData]);
-
-  // // Log isAuthenticated, userData, and userData.role for debugging
-  // useEffect(() => {
-  //   console.log("isAuthenticated:", isAuthenticated);
-  //   console.log("userData:", userData);
-  //   if (userData) {
-  //     console.log("userData.role:", userData.role);
-  //   }
-  // }, [isAuthenticated, userData]);
 
   return (
     <>
