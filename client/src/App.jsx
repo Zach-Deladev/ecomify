@@ -5,23 +5,42 @@ import Shop from "./pages/Shop";
 import Account from "./pages/CustomerDashboard"; // Your Account page component
 import Dashboard from "./pages/AdminDashboard"; // Your Dashboard page component
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
-import { useAuth } from "./context/AuthContext";
+import Login from "./pages/Login";
+import ProductPage from "./pages/ProductPage";
+import PaymentSuccess from "./pages/PaymentSuccess";
+import { useAuth } from "./context/AuthContext.jsx";
 
 const App = () => {
-  const { user } = useAuth();
+  const { isAuthenticated, authUser, logoutUser } = useAuth();
+  const handleLogout = () => {
+    logoutUser();
+  };
 
   // Define a ProtectedRoute component for routes that require authentication
   const ProtectedRoute = ({ children }) => {
-    return user ? children : <Navigate to="/" />; // Navigate to home if not authenticated
+    return isAuthenticated ? children : <Navigate to="/" />; // Navigate to home if not authenticated
   };
 
   return (
     <>
       <BrowserRouter>
-        <CustomNavbar />
+        <CustomNavbar
+          isAuthenticated={isAuthenticated}
+          onLogout={handleLogout}
+        />
         <Routes>
           <Route path="/" element={<Home />} />
+
+          <Route
+            path="/login"
+            element={
+              <Login onLoginSuccess={(credentials) => authUser(credentials)} />
+            }
+          />
+
           <Route path="/shop" element={<Shop />} />
+          <Route path="/product/:productId" element={<ProductPage />} />
+          <Route path="/payment-success" element={<PaymentSuccess />} />
 
           {/* Protect the Account route */}
           <Route

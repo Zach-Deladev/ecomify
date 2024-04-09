@@ -7,8 +7,14 @@ import cookieParser from "cookie-parser";
 import { notFound, errorHandler } from "./middleware/errorMiddleware.js";
 import userRoutes from "./routes/userRoutes.js";
 import productRoutes from "./routes/productRoutes.js";
+import checkoutSessionRoutes from "./routes/checkoutSessionRoutes.js";
+import Stripe from "stripe";
 dotenv.config();
 const port = process.env.PORT || 3001;
+
+export const stripe = new Stripe(
+  "sk_test_51P2y0FBrCykgLipTicRCfpdO5q6IR0mZgg9V3iy1ePxGOySAIhT6p8tZBLacbda53B2MToBmZaU8HsqSrzJKDLbL00zRd3blKo"
+);
 
 connectDB();
 
@@ -28,6 +34,7 @@ app.use(express.json());
 
 app.use("/api/users", userRoutes);
 app.use("/api/products", productRoutes);
+app.use("/api/checkout-sessions", checkoutSessionRoutes);
 
 app.get("/", (_, res) => {
   res.send("API is running....");

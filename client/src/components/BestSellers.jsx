@@ -2,14 +2,32 @@ import React from "react";
 import { Row, Col, Button } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./BestSellers.css";
+import useGetProducts from "../hooks/useGetProducts";
+import { useNavigate } from "react-router-dom";
 
 function BestSellers() {
+  const navigate = useNavigate();
+  const {
+    products,
+    loading: productsLoading,
+    error: productsError,
+  } = useGetProducts();
+
+  if (productsLoading) {
+    return <p>Loading products....</p>;
+  }
+
+  if (productsError) {
+    return <p>Error loading products</p>;
+  }
+
   return (
     <div className="best-sellers">
       <h1>Best Sellers</h1>
       <Row>
-        {[...Array(4)].map((_, index) => (
+        {products.map((product, index) => (
           <Col
+            onClick={() => navigate(`/product/${product.product.id}`)}
             key={index}
             lg={3}
             md={3}
@@ -17,12 +35,16 @@ function BestSellers() {
             xs={6}
             className="best-sellers-box"
           >
-            <img src="6-pack.png" width="100%" alt={`Beer Pack ${index + 1}`} />
+            <img
+              src={product.product.images[0]}
+              width="100%"
+              alt={`Beer Pack ${index + 1}`}
+            />
             <div className="discount-badge-box">
               <p>15% OFF</p>
             </div>
             <div className="best-sellers-box-text">
-              <h3>Beer Belly 6 Pack</h3>
+              <h3>{product.name}</h3>
               <p className="reviews">
                 {[...Array(5)].map((_, i) => (
                   <span key={i} className="material-symbols-outlined">
@@ -33,15 +55,17 @@ function BestSellers() {
               </p>
               <div className="best-sellers-box-price">
                 <p>
-                  <span className="compare-at-price price">£150.00</span>
-                  <span className="sale-price price">£75.00</span>
+                  <span className="compare-at-price price">
+                    £{product.compare_at_amount}
+                  </span>{" "}
+                  <span className="sale-price price">£{product.amount}</span>
                 </p>
               </div>
-              <div className="best-sellers-box-item-price">
+              {/* <div className="best-sellers-box-item-price">
                 <p>
                   <small>Only £12.50 per item!</small>
                 </p>
-              </div>
+              </div> */}
             </div>
           </Col>
         ))}
