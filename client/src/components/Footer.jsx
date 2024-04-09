@@ -72,7 +72,7 @@ function Footer() {
             <Col lg={6} sm={6} xs={12} className="all-rights">
               © 2024, Ecomify (UK) All Rights Reserved.
             </Col>
-            <Col lg={12} sm={12} xs={12} className="text-center pt-3">
+            <Col lg={12} sm={12} xs={12} className="text-center pt-3 footer-currency">
               <Dropdown>
                 <Dropdown.Toggle variant="info">
                   United Kingdom (GBP £)

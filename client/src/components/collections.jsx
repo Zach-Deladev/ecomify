@@ -1,7 +1,10 @@
 import React from "react";
 import { Row, Col } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
-import "./collections.css";
+import "./Collections.css";
+import Vnecks from "../assets/vnecks.png";
+import Polos from "../assets/polos.png";
+import Tshirts from "../assets/tshirts.png";
 
 function Collections() {
   return (
@@ -10,7 +13,7 @@ function Collections() {
         <Col xs={4}>
           <a href="#">
             <div className="collections-box">
-              <img src="t-shirts.png" width="100%" alt="T-Shirts" />
+              <img src={Tshirts} width="100%" alt="T-Shirts" />
               <div className="collections-box-links">Shop T-Shirts</div>
             </div>
           </a>
@@ -19,7 +22,7 @@ function Collections() {
         <Col xs={4}>
           <a href="#">
             <div className="collections-box">
-              <img src="polos.png" width="100%" alt="Polos" />
+              <img src={Polos} width="100%" alt="Polos" />
               <div className="collections-box-links">Shop Polos</div>
             </div>
           </a>
@@ -28,7 +31,7 @@ function Collections() {
         <Col xs={4}>
           <a href="#">
             <div className="collections-box">
-              <img src="v-necks.png" width="100%" alt="V-Necks" />
+              <img src={Vnecks} width="100%" alt="V-Necks" />
               <div className="collections-box-links">Shop V-Necks</div>
             </div>
           </a>

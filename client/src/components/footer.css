@@ -33,7 +33,7 @@
     border: 3px solid #fff!important;
 }
 
-li, a{
+.footer li, .footer a{
     list-style:none;
     text-decoration:none!important;
     color:#fff!important;
@@ -57,7 +57,7 @@ li, a{
     border: 1px solid #434343!important;
 }
 
-.dropdown-toggle::after {
+.footer-currency .dropdown-toggle::after {
     margin-left: 2em!important;
 }
 

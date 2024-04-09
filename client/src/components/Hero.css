@@ -3,7 +3,7 @@
 }
 
 .hero{
-  background-image: url(hero-bg.png);
+  background-image: url(../assets/hero-bg.png);
   height:100%;
   background-size:100%;
   color:#fff;

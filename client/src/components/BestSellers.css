@@ -28,12 +28,13 @@
 }
 
 .reviews span{
-    font-weight:600;
-    font-size:12px;
+    font-weight:400;
+    font-size:15px;
 }
 
 .best-sellers h1{
     font-weight:bold;
+    font-size:2.3em;
 }
 
 .best-sellers h3{
@@ -64,6 +65,8 @@
 
 .price{
     font-weight:bold;
+    font-size:23px;
+    padding-right:5%;
 }
 
 .compare-at-price{
@@ -76,7 +79,7 @@
 
 .best-sellers-box-item-price small{
     color:#D83B19;
-    font-size:12px;
+    font-size:14px;
 }
 
 .best-sellers-box-item-price{
@@ -87,6 +90,16 @@
     background:#000!important;
     border-radius:0px!important;
     border:1px solid #000!important;
+}
+
+.best-sellers-box a{
+    color:#000;
+    text-decoration:none;
+}
+
+.best-sellers-box a:hover{
+    color:#000;
+    text-decoration:none;
 }
 
 

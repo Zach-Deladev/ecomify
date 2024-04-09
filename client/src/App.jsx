@@ -1,4 +1,5 @@
 import React from "react";
+import Announcement from "./components/announcement-bar"
 import Home from "./pages/Home";
 import CustomNavbar from "./components/CustomNavbar";
 import Shop from "./pages/Shop";
@@ -8,6 +9,7 @@ const App = () => {
   return (
     <>
       <BrowserRouter>
+      <Announcement />
         <CustomNavbar />
         <Routes>
           <Route path="/" element={<Home />}></Route>

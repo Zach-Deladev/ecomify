@@ -1,7 +1,7 @@
 .testimonials{
     background-color: #333;
     color:#fff;
-    padding:2.5em 10em;
+    padding:2.5em 20vh;
     font-family: "Poppins", sans-serif;
 }
 
@@ -24,17 +24,36 @@
 
 .testimonial-body{
     padding:0.5em 0;
-    font-weight:bold;
-    font-size:1.5em;
+    font-weight:normal;
+    font-size:1.2em;
     line-height:25px;
 }
 
 .testimonials li{
     font-weight:200;
+    list-style:none;
+    font-size:0.8em;
     padding-bottom:1em;
 }
 
 .testimonials a{
     font-weight:bold;
     text-decoration:underline!important;
+    color:#fff;
 }
+
+.testimonials{
+    background-color: #333;
+    color:#fff;
+    padding:2.5em 20vh;
+    font-family: "Poppins", sans-serif;
+}
+
+@media (max-width: 767.98px) { 
+    .testimonials{
+        background-color: #333;
+        color:#fff;
+        padding:2.5em 5vh;
+        font-family: "Poppins", sans-serif;
+    }
+ }
