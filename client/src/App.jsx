@@ -9,6 +9,7 @@ import Login from "./pages/Login";
 import ProductPage from "./pages/ProductPage";
 import PaymentSuccess from "./pages/PaymentSuccess";
 import { useAuth } from "./context/AuthContext.jsx";
+import CategoryPage from "./pages/CategoryPage"; // Import the CategoryPage component
 
 const App = () => {
   const { isAuthenticated, authUser, logoutUser } = useAuth();
@@ -41,6 +42,9 @@ const App = () => {
           <Route path="/shop" element={<Shop />} />
           <Route path="/product/:productId" element={<ProductPage />} />
           <Route path="/payment-success" element={<PaymentSuccess />} />
+
+          {/* Route for category pages */}
+          <Route path="/category/:category" element={<CategoryPage />} />
 
           {/* Protect the Account route */}
           <Route

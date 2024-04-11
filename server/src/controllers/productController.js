@@ -33,6 +33,35 @@ export const getAllProducts = async (req, res) => {
   }
 };
 
+export const getProductsByCategory = async (req, res) => {
+  try {
+    const category = req.params.category; // Get the category from request parameters
+
+    // Fetch all products from Stripe API
+    const productsResponse = await stripe.products.list();
+
+    console.log("Products Response:", productsResponse);
+    const products = productsResponse.data; // Extract the products from the response
+
+    // Filter products by category
+    const productsByCategory = products.filter((product) => {
+      // Check if the product has metadata and if the category matches the requested category
+      return product.metadata && product.metadata.category === category;
+    });
+
+    // If there are products in the category, return them
+    if (productsByCategory.length > 0) {
+      res.status(200).json(productsByCategory);
+    } else {
+      // If no products found for the category, return a not found message
+      res.status(404).json({ message: "No products found for the category" });
+    }
+  } catch (error) {
+    // If there's an error, return an error message
+    res.status(500).json({ message: error.message });
+  }
+};
+
 // Get a single product by id
 export const getProductById = async (req, res) => {
   try {
