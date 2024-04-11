@@ -1,18 +1,19 @@
 import React from "react";
 import Hero from "../components/Hero";
-import Categories from "../components/Categories";
+import Collections from "../components/collections";
 import BestSellers from "../components/BestSellers";
-import Reviews from "../components/Reviews";
-import WhyChooseUs from "../components/WhyChooseUs";
+
+import Benefits from "../components/benefits";
 import Footer from "../components/Footer";
+import Testimonials from "../components/testimonials";
 const Home = () => {
   return (
     <>
       <Hero />
-      <Categories />
+      <Collections />
       <BestSellers />
-      <Reviews />
-      <WhyChooseUs />
+      <Testimonials />
+      <Benefits />
       <Footer />
     </>
   );

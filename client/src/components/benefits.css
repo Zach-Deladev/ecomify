@@ -1,0 +1,35 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+.inline-icon {
+  display: inline-block;
+  vertical-align: middle; /* Optional: Aligns the icon vertically */
+  margin-right: 5px; /* Optional: Adds some space between the icon and text */
+}
+
+.benefits h1 {
+  font-weight: bold;
+  font-size: 2.3em;
+}
+
+.benefits {
+  padding: 1em 1em;
+  font-family: "Poppins", sans-serif;
+}
+
+.benefit-list {
+  margin-top: 5%;
+}
+
+.benefits-left-side {
+  padding-left: 5%;
+  padding-right: 5%;
+}
+
+.benefits h3 {
+  font-weight: bold;
+}
+
+.free-shipping {
+  font-weight: 500;
+  font-size: 15px;
+}
