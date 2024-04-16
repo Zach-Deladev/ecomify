@@ -1,15 +1,17 @@
 import React from "react";
-import { Row, Col } from "react-bootstrap";
+import { Container, Row, Col } from "react-bootstrap";
 import { Link, useNavigate } from "react-router-dom"; // Import useNavigate hook
 import Tshirts from "../assets/t-shirts.png";
 import Polos from "../assets/polos.png";
 import Vnecks from "../assets/v-necks.png";
+import "./collections.css";
 
 function Collections() {
   const navigate = useNavigate(); // Initialize the navigate function
 
   return (
     <div className="collections">
+      <Container>
       <Row>
         <Col xs={4}>
           <div
@@ -39,6 +41,7 @@ function Collections() {
           </div>
         </Col>
       </Row>
+      </Container>
     </div>
   );
 }

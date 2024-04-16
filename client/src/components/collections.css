@@ -1,9 +1,12 @@
 .collections {
+  margin:1em!important;
   padding: 1em 1em;
   font-family: "Poppins", sans-serif;
+  cursor: pointer;
 }
 
 .collections-box-links {
+  color:#fff;
   background: #000;
   text-align: center;
   font-weight: bold;

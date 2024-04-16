@@ -1,6 +1,4 @@
-.row {
-  --bs-gutter-x: 0rem !important;
-}
+
 .carousel-control-next,
 .carousel-control-prev {
   margin-bottom: -33px !important;
