@@ -12,7 +12,7 @@ function Benefits() {
       <h1>Why Ecomify</h1>
       <Container>
         <Row>
-          <Col lg={6} md={6} sm={6} xs={12} className="benefits-left-side">
+          <Col lg={6} md={6} sm={12} xs={12} className="benefits-left-side">
             <div className="benefit-list">
               <h3>
                 <svg
@@ -27,9 +27,9 @@ function Benefits() {
                     fill="#1C9B19"
                   />
                 </svg>
-                Loose at the front
+                Comfortable Fit
               </h3>
-              <p>The t-shirt tapers off at the bottom to hide your belly</p>
+              <p>Loose front design ensures comfort, allowing easy movement all day.</p>
             </div>
 
             <div className="benefit-list">
@@ -46,9 +46,9 @@ function Benefits() {
                     fill="#1C9B19"
                   />
                 </svg>
-                Loose at the front
+                Flattering Silhouette
               </h3>
-              <p>The t-shirt tapers off at the bottom to hide your belly</p>
+              <p>Tapered bottom hides belly, providing slimming effect and confidence boost.</p>
             </div>
 
             <div className="benefit-list">
@@ -65,9 +65,9 @@ function Benefits() {
                     fill="#1C9B19"
                   />
                 </svg>
-                Loose at the front
+                Versatile Style
               </h3>
-              <p>The t-shirt tapers off at the bottom to hide your belly</p>
+              <p>T-shirts offer effortless style, pairing well with various outfits.</p>
             </div>
 
             <Button variant="primary">
@@ -78,7 +78,7 @@ function Benefits() {
             </p>
           </Col>
 
-          <Col lg={6} md={6} sm={6} xs={12} className="benefits-side">
+          <Col lg={6} md={6} sm={12} xs={12} className="benefits-side">
             <img src={Pack} width="100%" alt="Benefits" />
           </Col>
         </Row>
