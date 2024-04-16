@@ -43,6 +43,39 @@
     color:#f1f1f1;
 }
 
+.btn-check:checked+.btn, .btn.active, .btn.show, .btn:first-child:active, :not(.btn-check)+.btn:active {
+    color: #fff;
+    background-color: transparent;
+    border-color: transparent;
+}
+
+.dropdown-toggle::after {
+    margin-left:0!important;
+}
+
+.btn-light{
+    color: #fff;
+    background-color: transparent;
+    border-color: transparent;
+}
+
+.dropdown-toggle:hover{
+    border:none!important;
+}
+
+.dropdown-toggle{
+    border:none!important;
+}
+
+.right-side-announcement-bar button {
+    background-color: transparent !important;
+    color:#fff;
+}
+
+.dropdown-toggle::after {
+    display: none!important;
+}
+
 @media (max-width: 991.98px) { 
     .announcenent-bar-nunber{
         display:none!important;
@@ -56,6 +89,3 @@
     .announcement-bar-email{
         display:none!important;
     }
-  }
-
-  
