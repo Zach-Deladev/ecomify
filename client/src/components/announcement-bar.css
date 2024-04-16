@@ -1,86 +1,86 @@
-.announcement-bar{
-    color:#fff;
-    background:#000;
-    font-size:15px;
-    padding:1.1em 2em 0 2em;
+.announcement-bar {
+  color: #fff;
+  background: #000;
+  font-size: 15px;
+  padding: 1.1em 2em 0 2em;
 }
 
-*{
-    font-family: "Poppins", sans-serif;
+* {
+  font-family: "Poppins", sans-serif;
 }
 
 .material-symbols-outlined {
-    display: inline!important;
-    vertical-align: middle!important;
-    font-size: 20px!important;
+  display: inline !important;
+  vertical-align: middle !important;
+  font-size: 20px !important;
 }
 
-.right-side-announcement-bar{
-    font-size:12px;
+.right-side-announcement-bar {
+  font-size: 12px;
 }
 
-.left-side-announcement-bar{
- font-size:12px;
+.left-side-announcement-bar {
+  font-size: 12px;
 }
 
-.announcement-bar-shop-now{
-    color:#4191F5;
-    font-weight:bold;
-    text-decoration:underline;
+.announcement-bar-shop-now {
+  color: #4191f5;
+  font-weight: bold;
+  text-decoration: underline;
 }
 
-.announcement-bar .row>* {
-    padding-right: 0;
-    padding-left: 0;
+.announcement-bar .row > * {
+  padding-right: 0;
+  padding-left: 0;
 }
 
-.announcement-bar a{
-    color:#fff;
-    text-decoration:none;
+.announcement-bar a {
+  color: #fff;
+  text-decoration: none;
 }
 
-.announcement-bar a:hover{
-    color:#f1f1f1;
+.announcement-bar a:hover {
+  color: #f1f1f1;
 }
 
-.accouncement-bar .btn-check:checked+.btn, .btn.active, .btn.show, .btn:first-child:active, :not(.btn-check)+.btn:active {
+.btn-check:checked+.btn, .btn.active, .btn.show, .btn:first-child:active, :not(.btn-check)+.btn:active {
     color: #fff;
     background-color: transparent;
     border-color: transparent;
 }
 
 .dropdown-toggle::after {
-    margin-left:0!important;
+  margin-left: 0 !important;
 }
 
-.btn-light{
-    color: #fff;
-    background-color: transparent;
-    border-color: transparent;
+.btn-light {
+  color: #fff;
+  background-color: transparent;
+  border-color: transparent;
 }
 
-.dropdown-toggle:hover{
-    border:none!important;
+.dropdown-toggle:hover {
+  border: none !important;
 }
 
-.dropdown-toggle{
-    border:none!important;
+.dropdown-toggle {
+  border: none !important;
 }
 
 .right-side-announcement-bar button {
-    background-color: transparent !important;
-    color:#fff;
+  background-color: transparent !important;
+  color: #fff;
 }
 
 .dropdown-toggle::after {
-    display: none!important;
+  display: none !important;
 }
 
-@media (max-width: 991.98px) { 
-    .announcenent-bar-nunber{
-        display:none!important;
-    }
- }
+@media (max-width: 991.98px) {
+  .announcenent-bar-nunber {
+    display: none !important;
+  }
+}
 
  @media (max-width: 767.98px) { 
     .right-side-announcement-bar{
@@ -88,4 +88,4 @@
     }
     .announcement-bar-email{
         display:none!important;
-    }}
+    }

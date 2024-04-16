@@ -1,4 +1,3 @@
-import Product from "../models/productModel.js";
 import { stripe } from "../server.js";
 
 // Create a new product
@@ -15,21 +14,40 @@ export const createProduct = async (req, res) => {
 };
 
 // Get a list of all products
+// Get a list of all products with their data
 export const getAllProducts = async (req, res) => {
   try {
-    const productPrice = await stripe.prices.list({
-      expand: ["data.product"], // 🎉 Give me the product data too!
+    const products = await stripe.products.list({
+      expand: ["data"],
     });
-    let productPriceData = productPrice.data;
-    for (let productPriceDatum of productPriceData) {
-      productPriceDatum.amount = productPriceDatum.unit_amount / 100;
-      productPriceDatum.compare_at_amount = Math.ceil(
-        productPriceDatum.amount + productPriceDatum.amount * 0.25
-      );
-    }
-    res.status(200).json(productPriceData);
+    res.status(200).json(products.data);
   } catch (error) {
     res.status(404).json({ message: error.message });
+  }
+};
+
+// Function to get all prices
+export const getAllPrices = async (req, res) => {
+  try {
+    // Fetch all prices from Stripe
+    const prices = await stripe.prices.list({
+      limit: 100, // Adjust the limit as needed
+    });
+
+    // Extract relevant data and send it in the response
+    const pricesData = prices.data.map((price) => ({
+      id: price.id,
+      unit_amount: price.unit_amount,
+      currency: price.currency,
+      product: price.product,
+      active: price.active,
+      // Add any other fields you need
+    }));
+
+    res.status(200).json(pricesData);
+  } catch (error) {
+    console.error("Error fetching prices:", error);
+    res.status(500).json({ message: "Internal server error" });
   }
 };
 
