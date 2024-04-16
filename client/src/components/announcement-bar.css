@@ -43,10 +43,14 @@
   color: #f1f1f1;
 }
 
-.btn-check:checked+.btn, .btn.active, .btn.show, .btn:first-child:active, :not(.btn-check)+.btn:active {
-    color: #fff;
-    background-color: transparent;
-    border-color: transparent;
+.btn-check:checked + .btn,
+.btn.active,
+.btn.show,
+.btn:first-child:active,
+:not(.btn-check) + .btn:active {
+  color: #fff;
+  background-color: transparent;
+  border-color: transparent;
 }
 
 .dropdown-toggle::after {
@@ -82,10 +86,11 @@
   }
 }
 
- @media (max-width: 767.98px) { 
-    .right-side-announcement-bar{
-        display:none!important;
-    }
-    .announcement-bar-email{
-        display:none!important;
-    }
+@media (max-width: 767.98px) {
+  .right-side-announcement-bar {
+    display: none !important;
+  }
+  .announcement-bar-email {
+    display: none !important;
+  }
+}

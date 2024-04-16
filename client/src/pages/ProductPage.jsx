@@ -7,7 +7,7 @@ import useCreateCheckoutSession from "../hooks/useCreateCheckoutSession";
 import Benefits from "../components/benefits";
 import Testimonials from "../components/testimonials";
 import Reviews from "../components/Reviews";
-import Footer from "../components/Footer";
+
 // import Products from "../components/Products";
 
 const ProductPage = () => {
@@ -434,7 +434,7 @@ const ProductPage = () => {
       <Benefits />
       <Testimonials />
       <Reviews />
-      <Footer />
+     
     </>
   );
   

@@ -1,18 +1,16 @@
 import React from 'react'
-import Products from "../components/Products";
-import Footer from "../components/Footer";
-// import FilterBar from "../components/FilterBar.jsx"
+import Collections from '../components/collections'
+import Testimonials from '../components/testimonials'
+import Benefits from '../components/benefits'
 
 // This page is to display the Shop listings page
 
 const Shop = () => {
   return (
     <>
-    
-     {/* Potentially add in a filtering side bar */}
-    {/* <FilterBar/> */}
-    <Products />
-      <Footer />
+    <Collections/>
+    <Testimonials/>
+   <Benefits/>
      </>
   )
 }

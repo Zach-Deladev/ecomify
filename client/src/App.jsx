@@ -11,7 +11,7 @@ import PaymentSuccess from "./pages/PaymentSuccess";
 import { useAuth } from "./context/AuthContext.jsx";
 import CategoryPage from "./pages/CategoryPage"; // Import the CategoryPage component
 import AnnouncementBar from "./components/announcement-bar";
-
+import Footer from "./components/Footer.jsx";
 const App = () => {
   const { isAuthenticated, authUser, logoutUser } = useAuth();
   const handleLogout = () => {
@@ -70,6 +70,7 @@ const App = () => {
 
           {/* Add more routes as needed */}
         </Routes>
+        <Footer/>
       </BrowserRouter>
     </>
   );
