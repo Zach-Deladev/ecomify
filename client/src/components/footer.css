@@ -33,7 +33,7 @@
     border: 3px solid #fff!important;
 }
 
-.footer li, a{
+.footer li, .footer a{
     list-style:none;
     text-decoration:none!important;
     color:#fff!important;
