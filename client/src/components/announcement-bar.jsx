@@ -1,7 +1,7 @@
 import React from "react";
 import { Row, Col } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
-import "./announcement.css";
+import "./announcement-bar.css";
 
 function AnnouncementBar() {
   return (

@@ -10,6 +10,7 @@ import ProductPage from "./pages/ProductPage";
 import PaymentSuccess from "./pages/PaymentSuccess";
 import { useAuth } from "./context/AuthContext.jsx";
 import CategoryPage from "./pages/CategoryPage"; // Import the CategoryPage component
+import AnnouncementBar from "./components/announcement-bar";
 
 const App = () => {
   const { isAuthenticated, authUser, logoutUser } = useAuth();
@@ -25,6 +26,7 @@ const App = () => {
   return (
     <>
       <BrowserRouter>
+        <AnnouncementBar />
         <CustomNavbar
           isAuthenticated={isAuthenticated}
           onLogout={handleLogout}
