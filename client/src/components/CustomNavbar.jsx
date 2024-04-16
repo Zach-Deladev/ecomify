@@ -3,6 +3,8 @@ import { Link } from "react-router-dom";
 import { Navbar, Nav, Container, Modal, Button, Form } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { useAuth } from "../context/AuthContext";
+import Logo from "../assets/ecomify-logo.png"
+import "./CustomNavbar.css";
 
 const CustomNavbar = () => {
   const [showModal, setShowModal] = useState(false);
@@ -109,10 +111,10 @@ const CustomNavbar = () => {
 
   return (
     <>
-      <Navbar bg="dark" variant="dark" expand="lg">
+      <Navbar bg="light" variant="light" expand="lg">
         <Container>
           <Navbar.Brand as={Link} to="/">
-            My Website
+            <img src={Logo} width="120px"></img>
           </Navbar.Brand>
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav">
@@ -123,26 +125,28 @@ const CustomNavbar = () => {
               <Nav.Link as={Link} to="/shop">
                 Shop
               </Nav.Link>
-              {!user && (
-                <>
-                  <Nav.Link onClick={() => handleShow("login")}>Login</Nav.Link>
-                  <Nav.Link onClick={() => handleShow("signup")}>
-                    Signup
-                  </Nav.Link>
-                </>
-              )}
-              {user && user.role === "customer" && (
-                <Nav.Link as={Link} to="/my-account">
-                  My Account
-                </Nav.Link>
-              )}
-
-              {user && user?.role === "admin" && (
-                <Nav.Link as={Link} to="/admin/dashboard">
-                  Dashboard
-                </Nav.Link>
-              )}
             </Nav>
+            {!user && (
+              <>
+                <Button variant="success" onClick={() => handleShow("login")} type="button" className="navbar-buttons">
+                  Login
+                </Button>
+                <Button variant="success" onClick={() => handleShow("signup")} type="button" className="navbar-buttons">
+                  Signup
+                </Button>
+              </>
+            )}
+            {user && user.role === "customer" && (
+              <Button variant="success" as={Link} to="/my-account" type="button" className="navbar-buttons">
+                My Account
+              </Button>
+            )}
+            {user && user?.role === "admin" && (
+              <Button variant="success" as={Link} to="/admin/dashboard" type="button" className="navbar-buttons">
+                Dashboard
+              </Button>
+            )}
+
             {user && (
               <Button variant="danger" onClick={handleLogout}>
                 Logout
