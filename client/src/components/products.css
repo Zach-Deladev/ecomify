@@ -107,6 +107,10 @@ hr {
   padding-bottom:5em;
 }
 
+.accordion-header a{
+  text-decoration: underline;
+}
+
 .btn-outline-primary {
   --bs-btn-color: #D5D5D5;
   --bs-btn-border-color: #D5D5D5;
