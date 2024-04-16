@@ -6,13 +6,27 @@ const useGetProducts = () => {
   const [products, setProducts] = useState([]);
 
   useEffect(() => {
-    async function getProducts() {
+    async function fetchData() {
       try {
         setError(null);
-        const response = await fetch("http://localhost:3001/api/products");
-        const products = await response.json();
-        console.log(products);
-        setProducts(products);
+        const productsResponse = await fetch(
+          "http://localhost:3001/api/products"
+        );
+        const productsData = await productsResponse.json();
+
+        // Fetch prices for each product
+        const pricesResponse = await fetch("http://localhost:3001/api/products/prices");
+        const pricesData = await pricesResponse.json();
+
+        // Combine products and prices
+        const productsWithPrices = productsData.map((product) => {
+          const price = pricesData.find(
+            (price) => price.id === product.default_price
+          );
+          return { ...product, price };
+        });
+
+        setProducts(productsWithPrices);
       } catch (error) {
         console.error(error);
         setError(error);
@@ -20,7 +34,8 @@ const useGetProducts = () => {
         setLoading(false);
       }
     }
-    getProducts();
+
+    fetchData();
   }, []);
 
   return { loading, error, products };
