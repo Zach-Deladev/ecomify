@@ -125,6 +125,12 @@ const CustomNavbar = () => {
               <Nav.Link as={Link} to="/shop">
                 Shop
               </Nav.Link>
+              <Nav.Link as={Link} to="/about">
+                About Us
+              </Nav.Link>
+              <Nav.Link as={Link} to="/contact">
+                Contact
+              </Nav.Link>
             </Nav>
             {!user && (
               <>
