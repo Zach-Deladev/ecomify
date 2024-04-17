@@ -7,6 +7,7 @@ import useCreateCheckoutSession from "../hooks/useCreateCheckoutSession";
 import Benefits from "../components/benefits";
 import Testimonials from "../components/testimonials";
 import Reviews from "../components/Reviews";
+import Fabric from "../assets/fabric.png"
 
 // import Products from "../components/Products";
 
@@ -96,9 +97,9 @@ const ProductPage = () => {
               xs={12}
               className="text-lg-end text-xs-start"
             >
-              <p>
+              {/*<p>
                 <span className="price-breakdown-box">Only £XX.XX/Tee</span>
-              </p>
+          </p>*/}
             </Col>
           </Row>
           <hr />
@@ -295,13 +296,13 @@ const ProductPage = () => {
             {/* Satisfaction */}
             <div className="satisfaction-box-product-page mt-2">
               <p>Satisfaction Guaranteed</p>
-              <h3>"These t-shirts fit me perfectly as a 2XL guy"</h3>
+              <h3>"Absolutely obsessed with these! They fit like a dream and make me feel confident!"</h3>
             </div>
             {/* Fabric details */}
             <div className="fabric-details-box-product-page mt-2">
               <p>Fabric Details</p>
               <img
-                src="fabric-features.png"
+                src={Fabric}
                 alt="Fabric Features"
                 width="100%"
               />
@@ -330,9 +331,7 @@ const ProductPage = () => {
                   data-bs-parent="#accordion"
                 >
                   <div className="accordion-body">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                    Quos accusamus itaque dicta facilis repellendus ad aliquam
-                    iusto tenetur unde quidem?
+                  {productInfo.description}
                   </div>
                 </div>
               </div>
@@ -357,9 +356,13 @@ const ProductPage = () => {
                   data-bs-parent="#accordion"
                 >
                   <div className="accordion-body">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                    Quos accusamus itaque dicta facilis repellendus ad aliquam
-                    iusto tenetur unde quidem?
+                  <ul>
+                  <li>Machine Wash Cold: For best results, machine wash your t-shirts in cold water.</li>
+                  <li>Tumble Dry Low: After washing, tumble dry your t-shirts on a low setting to prevent shrinkage.</li>
+                  <li>Avoid Bleach: Do not use bleach or harsh chemicals, as they may damage the fabric.</li>
+                  <li>Iron Low: If needed, iron your t-shirts on a low setting to remove wrinkles.</li>
+                  <li>Avoid Direct Sunlight: Store your t-shirts away from direct sunlight to prevent color fading.</li>
+                </ul>
                   </div>
                 </div>
               </div>
@@ -384,9 +387,9 @@ const ProductPage = () => {
                   data-bs-parent="#accordion"
                 >
                   <div className="accordion-body">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                    Quos accusamus itaque dicta facilis repellendus ad aliquam
-                    iusto tenetur unde quidem?
+                  <p>Shipping Times: Our standard shipping time is 5-7 business days within the continental US.</p>
+                <p>International Shipping: We offer international shipping options. Please contact us for more information on international shipping rates and delivery times.</p>
+                <p>Free Returns: We offer free returns within 30 days of purchase. If you're not satisfied with your</p>
                   </div>
                 </div>
               </div>
@@ -418,7 +421,7 @@ const ProductPage = () => {
                       <div className="col-9 text-start">
                         <p>
                           Unsure about size? Try a few on at home with{" "}
-                          <a href="#">free returns & exchanges</a>
+                          <a href="/refund">free returns & exchanges</a>
                         </p>
                       </div>
                     </div>

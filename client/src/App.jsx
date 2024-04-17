@@ -6,6 +6,12 @@ import Account from "./pages/CustomerDashboard"; // Your Account page component
 import Dashboard from "./pages/AdminDashboard"; // Your Dashboard page component
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import Login from "./pages/Login";
+import Tos from "./pages/Tos"
+import Help from "./pages/Help"
+import About from "./pages/About"
+import Privacy from "./pages/Privacy"
+import Refund from "./pages/Refund"
+import Contact from "./pages/Contact"
 import ProductPage from "./pages/ProductPage";
 import PaymentSuccess from "./pages/PaymentSuccess";
 import { useAuth } from "./context/AuthContext.jsx";
@@ -41,6 +47,12 @@ const App = () => {
             }
           />
 
+          <Route path="/about" element={<About />} />
+          <Route path="/privacy" element={<Privacy />} />
+          <Route path="/refund" element={<Refund />} />
+          <Route path="/contact" element={<Contact />} />
+          <Route path="/tos" element={<Tos />} />
+          <Route path="/help" element={<Help />} />
           <Route path="/shop" element={<Shop />} />
           <Route path="/product/:productId" element={<ProductPage />} />
           <Route path="/payment-success" element={<PaymentSuccess />} />

@@ -2,6 +2,7 @@ import React from "react";
 import { Container, Row, Col, Button, Dropdown } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./footer.css";
+import { Link } from 'react-router-dom';
 
 function Footer() {
   return (
@@ -27,32 +28,26 @@ function Footer() {
           <Col lg={2} sm={6} xs={6}>
             <ul>
               <li>
-                <a href="#">Shop</a>
+                <a href="/shop">Shop</a>
               </li>
               <li>
-                <a href="#">Return your order</a>
+                <a href="/tos">Terms of service</a>
               </li>
               <li>
-                <a href="#">Terms of service</a>
-              </li>
-              <li>
-                <a href="#">Help</a>
+                <a href="/help">Help</a>
               </li>
             </ul>
           </Col>
           <Col lg={2} sm={6} xs={6}>
             <ul>
               <li>
-                <a href="#">Contact</a>
+                <a href="/contact">Contact</a>
               </li>
               <li>
-                <a href="#">Privacy policy</a>
+                <a href="/privacy">Privacy policy</a>
               </li>
               <li>
-                <a href="#">Refund policy</a>
-              </li>
-              <li>
-                <a href="#">Account</a>
+                <a href="/refund">Refund policy</a>
               </li>
             </ul>
           </Col>

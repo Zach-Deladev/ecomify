@@ -32,11 +32,10 @@ function Testimonials() {
                 ))}
               </p>
               <p className="testimonial-body">
-                "These are by far the best t-shirts I have ever purchased or
-                worn; they are so flattering"
+              "Absolutely obsessed with these! They fit like a dream and make me feel confident!"
               </p>
-              <li>Rover S. Verified Buyer</li>
-              <a href="#">SHOP THE COLLECTION</a>
+              <li>Paul S. Verified Buyer</li>
+              <a href="/shop">SHOP THE COLLECTION</a>
             </div>
           </Col>
           <Col md={4}>
@@ -58,11 +57,10 @@ function Testimonials() {
                 ))}
               </p>
               <p className="testimonial-body">
-                “Delighted with these, a proper fit without feeling I’m wearing
-                a potato sack.”
+              "I can't get enough of these! The fit is impeccable! plus they always garner compliments."
               </p>
-              <li>David B. Verified Buyer</li>
-              <a href="#">SHOP THE COLLECTION</a>
+              <li>Robert D. Verified Buyer</li>
+              <a href="/shop">SHOP THE COLLECTION</a>
             </div>
           </Col>
           <Col md={4}>
@@ -84,11 +82,10 @@ function Testimonials() {
                 ))}
               </p>
               <p className="testimonial-body">
-                “Not only are the shirts great quality & great fit but awesome
-                customer service.”
+              "These are a game-changer! They hug in all the right places and the quality is unreal."
               </p>
-              <li>Lee W. Verified Buyer</li>
-              <a href="#">SHOP THE COLLECTION</a>
+              <li>Zach D. Verified Buyer</li>
+              <a href="/shop">SHOP THE COLLECTION</a>
             </div>
           </Col>
         </Row>

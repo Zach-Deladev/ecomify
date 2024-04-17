@@ -47,11 +47,11 @@ function BestSellers() {
               <h3>{product.name}</h3>
               <p className="reviews">
                 {[...Array(5)].map((_, i) => (
-                  <span key={i} className="material-symbols-outlined">
-                    star
-                  </span>
+                  <svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 -930 930 930" width="20">
+                    <path d="m233-120 65-281L80-590l288-25 112-265 112 265 288 25-218 189 65 281-247-149-247 149Z" fill="gold"/>
+                  </svg>
                 ))}
-                <span className="ps-1">{product.reviews} Reviews</span>
+                <span className="ps-1">2 Reviews</span>
               </p>
               <div className="best-sellers-box-price">
                 <p>
@@ -60,10 +60,10 @@ function BestSellers() {
                     £{product.price.unit_amount / 100}
                   </span>
                   <Button
-                    variant="primary"
+                    variant="success"
                     onClick={() => navigate(`/product/${product.id}`)} // Navigate to product page on button click
                   >
-                    View Details
+                    Buy Now
                   </Button>
                 </p>
               </div>
@@ -73,10 +73,28 @@ function BestSellers() {
       </Row>
       <Row className="text-center">
         <Col>
+        <a href="/shop">
           <Button variant="primary">
-            Shop Now{" "}
-            <span className="material-symbols-outlined">arrow_forward</span>
+            Shop More{" "}
+            <svg
+            width="20px"
+            height="20px"
+              aria-hidden="true"
+              focusable="false"
+              data-prefix="fas"
+              data-icon="arrow-right"
+              class="svg-inline--fa fa-arrow-right "
+              role="img"
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 448 512"
+            >
+              <path
+                fill="currentColor"
+                d="M438.6 278.6c12.5-12.5 12.5-32.8 0-45.3l-160-160c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L338.8 224 32 224c-17.7 0-32 14.3-32 32s14.3 32 32 32l306.7 0L233.4 393.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l160-160z"
+              ></path>
+            </svg>
           </Button>
+        </a>
         </Col>
       </Row>
     </div>

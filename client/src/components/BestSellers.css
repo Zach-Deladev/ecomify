@@ -30,8 +30,18 @@
   letter-spacing: -4px !important;
 }
 
+.best-sellers-box:hover h3{
+  text-decoration: underline;
+  transition: 0.3s ease-in-out;
+}
+
+.best-sellers-box .btn-success{
+  border-radius:0px!important;
+}
+
 .reviews span {
-  font-weight: 600;
+  font-weight: 400;
+    text-decoration: underline;
   font-size: 12px;
 }
 
