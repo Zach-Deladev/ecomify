@@ -12,7 +12,7 @@ function Hero() {
       <div className="hero-overlay">
         <div className="hero-text">
           <p>UP TO 40% OFF SITEWIDE.</p>
-          <h2>Premium T-Shirts For Big Men</h2>
+          <h2>Premium T-Shirts For Everyone</h2>
           <a href="/shop">
           <Button variant="primary">
             Shop Now{" "}
