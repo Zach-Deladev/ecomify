@@ -1,6 +1,6 @@
 import React from "react";
 import { Row, Col, Button } from "react-bootstrap";
-import { useNavigate } from "react-router-dom"; // Import useNavigate
+import { useNavigate, Link } from "react-router-dom"; // Import useNavigate
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./BestSellers.css";
 import useGetProducts from "../hooks/useGetProducts";
@@ -73,7 +73,7 @@ function BestSellers() {
       </Row>
       <Row className="text-center">
         <Col>
-        <a href="/shop">
+        <Link to="/shop">
           <Button variant="primary">
             Shop More{" "}
             <svg
@@ -94,7 +94,7 @@ function BestSellers() {
               ></path>
             </svg>
           </Button>
-        </a>
+        </Link>
         </Col>
       </Row>
     </div>

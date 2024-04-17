@@ -7,6 +7,7 @@ import { faStar } from "@fortawesome/free-solid-svg-icons";
 import Test1 from "../assets/test1.png";
 import Test2 from "../assets/test2.png";
 import Test3 from "../assets/test3.png";
+import { Link } from "react-router-dom";
 
 function Testimonials() {
   return (
@@ -35,7 +36,7 @@ function Testimonials() {
               "Absolutely obsessed with these! They fit like a dream and make me feel confident!"
               </p>
               <li>Paul S. Verified Buyer</li>
-              <a href="/shop">SHOP THE COLLECTION</a>
+              <Link to="/shop">SHOP THE COLLECTION</Link>
             </div>
           </Col>
           <Col md={4}>
@@ -60,7 +61,7 @@ function Testimonials() {
               "I can't get enough of these! The fit is impeccable! plus they always garner compliments."
               </p>
               <li>Robert D. Verified Buyer</li>
-              <a href="/shop">SHOP THE COLLECTION</a>
+              <Link to="/shop">SHOP THE COLLECTION</Link>
             </div>
           </Col>
           <Col md={4}>
@@ -85,7 +86,7 @@ function Testimonials() {
               "These are a game-changer! They hug in all the right places and the quality is unreal."
               </p>
               <li>Zach D. Verified Buyer</li>
-              <a href="/shop">SHOP THE COLLECTION</a>
+              <Link to="/shop">SHOP THE COLLECTION</Link>
             </div>
           </Col>
         </Row>
