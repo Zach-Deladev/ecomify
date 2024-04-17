@@ -15,8 +15,8 @@ export const createCheckoutSession = async (req, res) => {
         },
       ],
       mode: "payment",
-      success_url: "http://localhost:5173/payment-success",
-      cancel_url: "http://localhost:5173/payment-cancel",
+      success_url: "https://ecomify.onrender.com/payment-success",
+      cancel_url: "https://ecomify.onrender.com/payment-cancel",
     });
 
     console.log(`Create checkout session with id: ${session.id}`);
