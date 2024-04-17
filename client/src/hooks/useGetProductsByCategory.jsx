@@ -10,7 +10,7 @@ const useGetProductsByCategory = (category) => {
       try {
         // Make the API call to fetch products by category
         const response = await fetch(
-          `http://localhost:3001/api/products/category/${category}`
+          `https://ecomify-backend.onrender.com/api/products/category/${category}`
         );
         if (!response.ok) {
           throw new Error("Failed to fetch products by category");

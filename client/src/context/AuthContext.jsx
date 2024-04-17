@@ -21,7 +21,7 @@ export const AuthProvider = ({ children }) => {
       if (jwt) {
       
         const response = await fetch(
-          "http://localhost:3001/api/users/profile",
+          "https://ecomify-backend.onrender.com/api/users/profile",
           {
             headers: {
               Authorization: `Bearer ${jwt}`,
@@ -48,7 +48,7 @@ export const AuthProvider = ({ children }) => {
 
   // Sign in the user
   const signIn = async (credentials) => {
-    const response = await fetch("http://localhost:3001/api/users/sign-in/", {
+    const response = await fetch("https://ecomify-backend.onrender.com/api/users/sign-in/", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(credentials),
@@ -66,7 +66,7 @@ export const AuthProvider = ({ children }) => {
 
   // Sign up a new user
   const signUp = async (credentials) => {
-    const response = await fetch("http://localhost:3001/api/users/sign-up", {
+    const response = await fetch("https://ecomify-backend.onrender.com/api/users/sign-up", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(credentials),

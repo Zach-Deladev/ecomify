@@ -8,7 +8,7 @@ const useGetProduct = (productId) => {
   useEffect(() => {
     async function getProduct() {
       const response = await fetch(
-        `http://localhost:3001/api/products/${productId}`
+        `https://ecomify-backend.onrender.com/api/products/${productId}`
       );
       const product = await response.json();
       setProduct(product);

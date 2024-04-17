@@ -15,7 +15,7 @@ export const ProductsProvider = ({ children }) => {
 
   // Fetch all products
   const fetchProducts = async () => {
-    const response = await fetch("http://localhost:3001/api/products");
+    const response = await fetch("https://ecomify-backend.onrender.com/api/products");
     if (response.ok) {
       const data = await response.json();
       setProducts(data);
@@ -26,7 +26,7 @@ export const ProductsProvider = ({ children }) => {
 
   // Create a new product
   const createProduct = async (productData) => {
-    const response = await fetch("http://localhost:3001/api/products", {
+    const response = await fetch("https://ecomify-backend.onrender.com/api/products", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -45,7 +45,7 @@ export const ProductsProvider = ({ children }) => {
 
   // Update a product by ID
   const updateProduct = async (id, productData) => {
-    const response = await fetch(`http://localhost:3001/api/products/${id}`, {
+    const response = await fetch(`https://ecomify-backend.onrender.com/api/products/${id}`, {
       method: "PUT",
       headers: {
         "Content-Type": "application/json",
@@ -68,7 +68,7 @@ export const ProductsProvider = ({ children }) => {
 
   // Delete a product by ID
   const deleteProduct = async (id) => {
-    const response = await fetch(`http://localhost:3001/api/products/${id}`, {
+    const response = await fetch(`https://ecomify-backend.onrender.com/api/products/${id}`, {
       method: "DELETE",
       headers: {
         Authorization: `Bearer ${Cookies.get("jwt")}`,

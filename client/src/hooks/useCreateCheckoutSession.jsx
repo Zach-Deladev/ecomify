@@ -16,7 +16,7 @@ const useCreateCheckoutSession = () => {
 
       const stripe = await stripePromise;
       const response = await fetch(
-        `http://localhost:3001/api/checkout-sessions/create/${priceId}`,
+        `https://ecomify-backend.onrender.com/api/checkout-sessions/create/${priceId}`,
         { method: "POST" }
       );
       const session = await response.json();

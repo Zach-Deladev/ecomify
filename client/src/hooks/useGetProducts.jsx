@@ -10,12 +10,12 @@ const useGetProducts = () => {
       try {
         setError(null);
         const productsResponse = await fetch(
-          "http://localhost:3001/api/products"
+          "https://ecomify-backend.onrender.com/api/products"
         );
         const productsData = await productsResponse.json();
 
         // Fetch prices for each product
-        const pricesResponse = await fetch("http://localhost:3001/api/products/prices");
+        const pricesResponse = await fetch("https://ecomify-backend.onrender.com/api/products/prices");
         const pricesData = await pricesResponse.json();
 
         // Combine products and prices
