@@ -28,26 +28,26 @@ function Footer() {
           <Col lg={2} sm={6} xs={6}>
             <ul>
               <li>
-                <a href="/shop">Shop</a>
+                <Link to="/shop">Shop</Link>
               </li>
               <li>
-                <a href="/tos">Terms of service</a>
+                <Link to="/tos">Terms of service</Link>
               </li>
               <li>
-                <a href="/help">Help</a>
+                <Link to="/help">Help</Link>
               </li>
             </ul>
           </Col>
           <Col lg={2} sm={6} xs={6}>
             <ul>
               <li>
-                <a href="/contact">Contact</a>
+                <Link to="/contact">Contact</Link>
               </li>
               <li>
-                <a href="/privacy">Privacy policy</a>
+                <Link to="/privacy">Privacy policy</Link>
               </li>
               <li>
-                <a href="/refund">Refund policy</a>
+                <Link to="/refund">Refund policy</Link>
               </li>
             </ul>
           </Col>
@@ -57,12 +57,12 @@ function Footer() {
         <Container>
           <Row>
             <Col lg={6} sm={6} xs={12} className="social-icons">
-              <a href="#">
+              <Link to="#">
                 <i className="fab fa-facebook fa-lg"></i>
-              </a>
-              <a href="#">
+              </Link>
+              <Link to="#">
                 <i className="fab fa-instagram fa-lg"></i>
-              </a>
+              </Link>
             </Col>
             <Col lg={6} sm={6} xs={12} className="all-rights">
               © 2024, Ecomify (UK) All Rights Reserved.
