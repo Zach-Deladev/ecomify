@@ -4,8 +4,8 @@ import "../components/products.css";
 import useGetProduct from "../hooks/useGetProduct";
 import { Button, Card, Row, Carousel, Col } from "react-bootstrap";
 import useCreateCheckoutSession from "../hooks/useCreateCheckoutSession";
-import Benefits from "../components/benefits";
-import Testimonials from "../components/testimonials";
+import Benefits from "../components/Benefits";
+import Testimonials from "../components/Testimonials";
 import Reviews from "../components/Reviews";
 import Fabric from "../assets/fabric.png"
 

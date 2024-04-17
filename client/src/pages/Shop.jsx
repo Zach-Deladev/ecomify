@@ -1,7 +1,7 @@
 import React from 'react'
-import Collections from '../components/collections'
-import Testimonials from '../components/testimonials'
-import Benefits from '../components/benefits'
+import Collections from '../components/Collections'
+import Testimonials from '../components/Testimonials'
+import Benefits from '../components/Benefits'
 
 // This page is to display the Shop listings page
 
