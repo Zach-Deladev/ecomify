@@ -8,7 +8,7 @@ import Benefits from "../components/Benefits";
 import Testimonials from "../components/Testimonials";
 import Reviews from "../components/Reviews";
 import Fabric from "../assets/fabric.png";
-
+import { useAuth } from "../context/AuthContext";
 const ProductPage = () => {
   const { productId } = useParams();
   const {
@@ -25,6 +25,8 @@ const ProductPage = () => {
 
   const [selectedSize, setSelectedSize] = useState(null);
   const [sizeError, setSizeError] = useState(false);
+  const { user } = useAuth();
+
   if (productLoading) {
     return <p>Loading product..</p>;
   }
@@ -130,25 +132,45 @@ const ProductPage = () => {
             </div>
             <div className="buy-button mt-3">
               {sizeError && <p className="text-danger">Please choose a size</p>}
-              <Button
-                onClick={handleCreateCheckoutSession}
-                variant="primary"
-                // disabled={!selectedSize}
-              >
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  height="30"
-                  viewBox="0 -960 960 960"
-                  width="24"
-                  style={{ marginRight: "5px" }}
+              {/* Render buy button only if the user is logged in */}
+              {user ? (
+                <Button
+                  onClick={handleCreateCheckoutSession}
+                  variant="primary"
+                  disabled={!selectedSize}
                 >
-                  <path
-                    d="M280-80q-33 0-56.5-23.5T200-160q0-33 23.5-56.5T280-240q33 0 56.5 23.5T360-160q0 33-23.5 56.5T280-80Zm400 0q-33 0-56.5-23.5T600-160q0-33 23.5-56.5T680-240q33 0 56.5 23.5T760-160q0 33-23.5 56.5T680-80ZM246-720l96 200h280l110-200H246Zm-38-80h590q23 0 35 20.5t1 41.5L692-482q-11 20-29.5 31T622-440H324l-44 80h480v80H280q-45 0-68-39.5t-2-78.5l54-98-144-304H40v-80h130l38 80Zm134 280h280-280Z"
-                    fill="white"
-                  />
-                </svg>
-                Buy Now
-              </Button>
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    height="30"
+                    viewBox="0 -960 960 960"
+                    width="24"
+                    style={{ marginRight: "5px" }}
+                  >
+                    <path
+                      d="M280-80q-33 0-56.5-23.5T200-160q0-33 23.5-56.5T280-240q33 0 56.5 23.5T360-160q0 33-23.5 56.5T280-80Zm400 0q-33 0-56.5-23.5T600-160q0-33 23.5-56.5T680-240q33 0 56.5 23.5T760-160q0 33-23.5 56.5T680-80ZM246-720l96 200h280l110-200H246Zm-38-80h590q23 0 35 20.5t1 41.5L692-482q-11 20-29.5 31T622-440H324l-44 80h480v80H280q-45 0-68-39.5t-2-78.5l54-98-144-304H40v-80h130l38 80Zm134 280h280-280Z"
+                      fill="white"
+                    />
+                  </svg>
+                  Buy Now
+                </Button>
+              ) : (
+                <Button disabled>Buy Now</Button>
+              )}
+
+              {/* If user is not logged in, show a message or redirect to login page */}
+              {!user && (
+                <p>
+                  Please{" "}
+                  <span href="" className="text-primary">
+                    login
+                  </span>{" "}
+                  or{" "}
+                  <span href="" className="text-primary">
+                    sign up
+                  </span>{" "}
+                  to purchase this product.
+                </p>
+              )}
             </div>
             {/* Additional product information */}
             <div className="under-atc mt-2">
