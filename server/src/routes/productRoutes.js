@@ -6,6 +6,7 @@ import {
   getAllProducts,
   getProductById,
   getProductsByCategory,
+  getAllPricesForProduct,
   updateProduct,
   deleteProduct,
   getAllPrices, // Add this import
@@ -16,7 +17,8 @@ const router = express.Router();
 router.post("/", protect, restrictTo("admin"), createProduct);
 router.get("/", getAllProducts);
 router.get("/category/:category", getProductsByCategory);
-router.get("/prices", getAllPrices); // Add this route
+router.get("/prices", getAllPrices); 
+router.get("/prices/all", getAllPricesForProduct);
 router.get("/:id", getProductById);
 router.put("/:id", protect, restrictTo("admin"), updateProduct);
 router.delete("/:id", protect, restrictTo("admin"), deleteProduct);

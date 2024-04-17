@@ -85,11 +85,29 @@ export const getProductById = async (req, res) => {
   try {
     const productId = req.params.id;
     const product = await stripe.products.retrieve(productId);
-    const price = await stripe.prices.retrieve(product.default_price);
-    const productWithPrice = { data: {} };
-    productWithPrice.data.product = product;
-    productWithPrice.data.price = price;
-    res.status(200).json(productWithPrice);
+    const prices = await stripe.prices.list({ product: productId });
+
+    const productWithPrices = { data: {} };
+    productWithPrices.data.product = product;
+    productWithPrices.data.prices = prices.data;
+
+    res.status(200).json(productWithPrices);
+  } catch (error) {
+    res.status(404).json({ message: error.message });
+  }
+};
+// Get all prices for a product by product id
+export const getAllPricesForProduct = async (req, res) => {
+  try {
+    const productId = req.params.id;
+    const product = await stripe.products.retrieve(productId);
+    const prices = await stripe.prices.list({ product: productId });
+
+    const productWithPrices = { data: {} };
+    productWithPrices.data.product = product;
+    productWithPrices.data.prices = prices.data;
+
+    res.status(200).json(productWithPrices);
   } catch (error) {
     res.status(404).json({ message: error.message });
   }

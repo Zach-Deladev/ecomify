@@ -1,4 +1,3 @@
-
 .carousel-control-next,
 .carousel-control-prev {
   margin-bottom: -33px !important;
@@ -103,18 +102,18 @@ hr {
   flex-direction: column;
 }
 
-.main-product-section{
-  padding-bottom:5em;
+.main-product-section {
+  padding-bottom: 5em;
 }
 
-.accordion-header a{
+.accordion-header a {
   text-decoration: underline;
 }
 
 .btn-outline-primary {
-  --bs-btn-color: #D5D5D5;
-  --bs-btn-border-color: #D5D5D5;
-  --bs-btn-bg: #D5D5D5;
+  --bs-btn-color: #d5d5d5;
+  --bs-btn-border-color: #d5d5d5;
+  --bs-btn-bg: #d5d5d5;
   --bs-btn-color: #000;
   font-weight: bold;
   border-radius: 0px !important;
@@ -379,4 +378,8 @@ hr {
     width: 100% !important;
     font-size: 1em;
   }
+}
+.selected {
+  border: 3px solid black !important;
+  color: #000 !important;
 }
