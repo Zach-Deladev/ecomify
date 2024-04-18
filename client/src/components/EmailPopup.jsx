@@ -2,16 +2,16 @@ import React, { useState } from 'react';
 import "./EmailPopup.css";
 
 const EmailPopup = ({ onClose }) => {
-  const [stage, setStage] = useState(0); // 0: Initial stage, 1: Email entry stage, 2: Confirmation stage
+  const [stage, setStage] = useState(0); 
   const [email, setEmail] = useState('');
   const [confirmationCode, setConfirmationCode] = useState('');
 
   const handleYesClick = () => {
-    setStage(1); // Move to the email entry stage
+    setStage(1);
   };
 
   const handleNoClick = () => {
-    onClose(); // Close the popup
+    onClose(); 
   };
 
   const handleEmailChange = (event) => {
@@ -19,16 +19,14 @@ const EmailPopup = ({ onClose }) => {
   };
 
   const handleSubmit = () => {
-    // Simulate submitting the email (you can add actual API calls here)
-    // For demonstration, just log the email to console and generate a random confirmation code
     console.log('Submitted email:', email);
     const code = Math.random().toString(36).substring(7);
     setConfirmationCode(code);
-    setStage(2); // Move to the confirmation stage
+    setStage(2);
   };
 
   const handleConfirmationClose = () => {
-    onClose(); // Close the popup
+    onClose();
   };
 
   return (
