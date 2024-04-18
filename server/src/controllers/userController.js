@@ -44,7 +44,9 @@ const signUp = async (req, res) => {
 
   if (userExists) {
     res.status(400);
-    throw new Error("User already exists");
+    res.json("User already exists")
+    console.log("User already exists");
+    return
   }
 
   const user = await User.create({
