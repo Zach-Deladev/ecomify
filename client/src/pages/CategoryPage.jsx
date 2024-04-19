@@ -3,7 +3,7 @@ import { Row, Col, Button } from "react-bootstrap";
 import { useParams } from "react-router-dom";
 import useGetProductsByCategory from "../hooks/useGetProductsByCategory";
 import { useNavigate } from "react-router-dom";
-import "./BestSellers.css";
+import "..components/BestSellers.css";
 
 const CategoryPage = () => {
   const { category } = useParams();
