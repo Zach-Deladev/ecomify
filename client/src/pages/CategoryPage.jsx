@@ -21,27 +21,47 @@ const CategoryPage = () => {
     <div className="category-page">
       <h1 className="text-center mb-4">{category.toUpperCase()} Collection</h1>
       <Row xs={1} md={2} lg={3} className="g-4">
-        {products.map((product, index) => (
-          <Col key={index}>
-            <div
-              className="product-card"
-              onClick={() => navigate(`/product/${product.id}`)}
-            >
-              <img
-                src={product.images[0]}
-                className="img-fluid"
-                alt={`Product ${index + 1}`}
-                style={{ maxHeight: "500px" }}
-              />
-              <div className="product-details">
-                <h3 className="product-name">{product.name}</h3>
-                <p className="product-description">{product.description}</p>
-                <div className="product-price">
-                  <span className="compare-price">
-                    £{product.compare_at_price}
-                  </span>{" "}
-                  <span className="sale-price">£{product.price}</span>
-                </div>
+      {products.map((product, index) => (
+          <Col
+            key={index}
+            lg={4}
+            md={4}
+            sm={6}
+            xs={6}
+            className="best-sellers-box"
+          >
+            <img
+              src={product.images[0]}
+              width="100%"
+              alt={`Product ${index + 1}`}
+            />
+            <div className="discount-badge-box">
+              {/* Assuming you have some logic here to determine if the product is on sale */}
+              {product.onSale && <p>15% OFF</p>}
+            </div>
+            <div className="best-sellers-box-text">
+              <h3>{product.name}</h3>
+              <p className="reviews">
+                {[...Array(5)].map((_, i) => (
+                  <svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 -930 930 930" width="20">
+                    <path d="m233-120 65-281L80-590l288-25 112-265 112 265 288 25-218 189 65 281-247-149-247 149Z" fill="gold"/>
+                  </svg>
+                ))}
+                <span className="ps-1">2 Reviews</span>
+              </p>
+              <div className="best-sellers-box-price">
+                <p>
+                  {/* Displaying the price */}
+                  <span className="price">
+                    £{product.price.unit_amount / 100}
+                  </span>
+                  <Button
+                    variant="success"
+                    onClick={() => navigate(`/product/${product.id}`)} // Navigate to product page on button click
+                  >
+                    Buy Now
+                  </Button>
+                </p>
               </div>
             </div>
           </Col>
