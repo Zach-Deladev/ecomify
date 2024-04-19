@@ -3,6 +3,7 @@ import { Row, Col, Button } from "react-bootstrap";
 import { useParams } from "react-router-dom";
 import useGetProductsByCategory from "../hooks/useGetProductsByCategory";
 import { useNavigate } from "react-router-dom";
+import "./BestSellers.css";
 
 const CategoryPage = () => {
   const { category } = useParams();
@@ -31,10 +32,11 @@ const CategoryPage = () => {
             className="best-sellers-box"
           >
             <img
-              src={product.images[0]}
-              width="100%"
-              alt={`Product ${index + 1}`}
-            />
+                src={product.images[0]}
+                className="img-fluid"
+                alt={`Product ${index + 1}`}
+                style={{ maxHeight: "500px" }}
+              />
             <div className="discount-badge-box">
               {/* Assuming you have some logic here to determine if the product is on sale */}
               {product.onSale && <p>15% OFF</p>}
@@ -53,7 +55,7 @@ const CategoryPage = () => {
                 <p>
                   {/* Displaying the price */}
                   <span className="price">
-                    £{product.price.unit_amount / 100}
+                  £{product.price}
                   </span>
                   <Button
                     variant="success"
