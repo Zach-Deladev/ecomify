@@ -28,8 +28,8 @@ function BestSellers() {
         {products.map((product, index) => (
           <Col
             key={index}
-            lg={3}
-            md={3}
+            lg={4}
+            md={4}
             sm={6}
             xs={6}
             className="best-sellers-box"
