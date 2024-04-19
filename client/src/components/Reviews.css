@@ -1,91 +1,91 @@
 .reviews-head-main-rating{
-    font-size: 2em;
-    font-weight:bold;
+  font-size: 2em!important;
+  font-weight:bold!important;
 }
 
 .reviews-head-left-side p{
-    margin:0;
+  margin:0;
 }
 
 .reviews-head-left-side{
-    border-right:1px solid #D9D9D9;
-    height: 100%;;
+  border-right:1px solid #D9D9D9;
+  height: 100%;;
 }
 
 .progress-bar-custom {
-    width: 40%;
-    background-color: #f2f2f2;
-  }
-  
-  .progress-custom {
-    width: 0%;
-    height: 15px;
-    background-color: #000;
-    transition: width 0.3s ease;
-  }
+  width: 40%;
+  background-color: #f2f2f2;
+}
 
-  .progress-bar-text{
-    color:#787878;
-    font-size: 12px;
+.progress-custom {
+  width: 0%;
+  height: 15px;
+  background-color: #000;
+  transition: width 0.3s ease;
+}
 
-  }
+.progress-bar-text{
+  color:#787878;
+  font-size: 12px;
 
-  .progress-bar-text p{
-    margin-top: 0;
-  }
+}
 
-  .progress-bar-text-div{
-    position: absolute;
-    top: 7px;
-    left: 67%;
-    margin-top:-10px;
+.progress-bar-text p{
+  margin-top: 0;
+}
 
-  }
+.progress-bar-text-div{
+  position: absolute;
+  top: 7px;
+  left: 67%;
+  margin-top:-10px;
 
-  .review-box-avatar h1 {
-    background-color: #000;
-    color: #fff;
-    text-align: center;
-    border-radius: 50%;
-    width: 50px;
-    height: 50px;
-    line-height: 50px; 
-    font-size: 24px; 
+}
+
+.review-box-avatar h1 {
+  background-color: #000;
+  color: #fff;
+  text-align: center;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  line-height: 50px; 
+  font-size: 24px; 
 }
 
 .review-box{
-    border-top:1px solid #D9D9D9;
-    padding:1em 0;
+  border-top:1px solid #D9D9D9;
+  padding:1em 0;
 }
 
 .review-box h3{
-    font-size:18px;
-    font-weight:400;
+  font-size:18px;
+  font-weight:400;
 }
 
 .review-box-name span{
-    background-color:#4A7630;
-    color:#fff;
-    font-size:10px;
-    padding:2px 8px;
-    margin-left: 5px;
+  background-color:#4A7630;
+  color:#fff;
+  font-size:10px;
+  padding:2px 8px;
+  margin-left: 5px;
 }
 
 .inline-container {
-    display: flex;
-    align-items: center;
+  display: flex;
+  align-items: center;
 }
 
 .inline-element {
-    display: inline;
+  display: inline;
 }
 
 .review-box-name h3 {
-    margin: 0;
+  margin: 0;
 }
 
 .review-box-name h3 span {
-    margin-left: 15px;
+  margin-left: 15px;
 }
 
 .review-box-country p{
@@ -94,75 +94,75 @@ margin:0;
 }
 
 .reviews{
-    margin:4em 0em 4em 0em;
+  margin:4em 0em 4em 0em;
 }
 
 .reviews .btn-primary {
-    text-align: center;
-    width: 15%!important;;
-    font-size:1em;
-    --bs-btn-color: #fff!important;
-    --bs-btn-border-color: #000!important;
-    --bs-btn-bg:#000000!important;
-    --bs-btn-hover-color: #fff;
-    --bs-btn-hover-bg: #272727;
-    --bs-btn-hover-border-color: #272727;
-    --bs-btn-focus-shadow-rgb: 13, 110, 253;
-    --bs-btn-active-color: #fff;
-    --bs-btn-active-bg: #000!important;
-    --bs-btn-active-border-color: #000!important;
-    --bs-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
-    --bs-btn-disabled-color: #0d6efd;
-    --bs-btn-disabled-bg: transparent;
-    --bs-btn-disabled-border-color: #0d6efd;
-    --bs-gradient: none;
+  text-align: center;
+  width: 15%!important;;
+  font-size:1em;
+  --bs-btn-color: #fff!important;
+  --bs-btn-border-color: #000!important;
+  --bs-btn-bg:#000000!important;
+  --bs-btn-hover-color: #fff;
+  --bs-btn-hover-bg: #272727;
+  --bs-btn-hover-border-color: #272727;
+  --bs-btn-focus-shadow-rgb: 13, 110, 253;
+  --bs-btn-active-color: #fff;
+  --bs-btn-active-bg: #000!important;
+  --bs-btn-active-border-color: #000!important;
+  --bs-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+  --bs-btn-disabled-color: #0d6efd;
+  --bs-btn-disabled-bg: transparent;
+  --bs-btn-disabled-border-color: #0d6efd;
+  --bs-gradient: none;
 }
 
 
 
-  @media (max-width: 992px) { 
-    .progress-bar-text-div{
-        left: 69%;
-    
-      }
-
-      
- }
-
- @media (max-width: 768px) { 
-    .progress-bar-text-div{
-        left: 60%;
-    
-      }
-      .reviews-head-left-side{
-        border-right:none!important;
-        border-bottom:1px solid #D9D9D9;
-        padding-bottom:1em;
-        margin-bottom:1em;
+@media (max-width: 992px) { 
+  .progress-bar-text-div{
+      left: 69%;
+  
     }
 
-    .review-summary{
-        padding-top:1em;
+    
+}
+
+@media (max-width: 768px) { 
+  .progress-bar-text-div{
+      left: 60%;
+  
     }
- }
+    .reviews-head-left-side{
+      border-right:none!important;
+      border-bottom:1px solid #D9D9D9;
+      padding-bottom:1em;
+      margin-bottom:1em;
+  }
 
- @media (max-width: 498px) { 
-    .progress-bar-text-div{
-        left: 63%;
-    
-      }
- }
+  .review-summary{
+      padding-top:1em;
+  }
+}
 
- @media (max-width: 433px) { 
-    .progress-bar-text-div{
-        left: 66%;
-    
-      }
- }
+@media (max-width: 498px) { 
+  .progress-bar-text-div{
+      left: 63%;
+  
+    }
+}
 
- @media (max-width: 377px) { 
-    .progress-bar-text-div{
-        left: 75%;
-    
-      }
- }
+@media (max-width: 433px) { 
+  .progress-bar-text-div{
+      left: 66%;
+  
+    }
+}
+
+@media (max-width: 377px) { 
+  .progress-bar-text-div{
+      left: 75%;
+  
+    }
+}

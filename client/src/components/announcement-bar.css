@@ -43,7 +43,7 @@
   color: #f1f1f1;
 }
 
-.btn-check:checked + .btn,
+.announcement-bar .btn-check:checked + .btn,
 .btn.active,
 .btn.show,
 .btn:first-child:active,
